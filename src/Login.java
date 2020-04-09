@@ -150,7 +150,7 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_txtUserNameMouseClicked
 
     private void btnOKMouseClicked(java.awt.event.MouseEvent evt) {                                   
-    if (txtUserName.getText().equals("")) {
+   /* if (txtUserName.getText().equals("")) {
            JOptionPane.showMessageDialog( this, "Please enter user name","Error", JOptionPane.ERROR_MESSAGE);
            return;
             
@@ -160,7 +160,7 @@ PreparedStatement pst=null;
            JOptionPane.showMessageDialog( this, "Please enter password","Error", JOptionPane.ERROR_MESSAGE);
            return;
           
-            }
+            }*/
      // con=Connect.ConnectDB();
      // String sql= "select * from users where UserName= '" + txtUserName.getText() + "' and user_Password ='" + txtPassword.getText() + "'";
     //  try
