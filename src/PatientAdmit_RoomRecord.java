@@ -128,7 +128,7 @@ PreparedStatement pst=null;
                 frm.txtRemarks.setText(add15);
                 int add16 = rs.getInt("AdmitID");
                 String add17= Integer.toString(add16);
-                frm.txtAdmitID.setText(add17);
+             //   frm.txtAdmitID.setText(add17);
                 
                 frm.btnUpdate.setEnabled(true);
                 frm.btnDelete.setEnabled(true);
