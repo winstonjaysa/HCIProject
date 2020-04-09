@@ -161,25 +161,25 @@ PreparedStatement pst=null;
            return;
           
             }
-      con=Connect.ConnectDB();
-      String sql= "select * from users where UserName= '" + txtUserName.getText() + "' and user_Password ='" + txtPassword.getText() + "'";
-      try
-      {
-          pst=con.prepareStatement(sql);
-          rs= pst.executeQuery();
-          if (rs.next()){
+     // con=Connect.ConnectDB();
+     // String sql= "select * from users where UserName= '" + txtUserName.getText() + "' and user_Password ='" + txtPassword.getText() + "'";
+    //  try
+    //  {
+    //      pst=con.prepareStatement(sql);
+    //      rs= pst.executeQuery();
+     //     if (rs.next()){
              this.hide();
              MainMenu frm=new MainMenu();
              frm.setVisible(true);
-          }
-          else{
+     //     }
+    //      else{
               
-            JOptionPane.showMessageDialog(null, "Login Failed..Try again !","Access denied",JOptionPane.ERROR_MESSAGE);
-          }
-      }catch(SQLException | HeadlessException e){
-         JOptionPane.showMessageDialog(null, e); 
+    //        JOptionPane.showMessageDialog(null, "Login Failed..Try again !","Access denied",JOptionPane.ERROR_MESSAGE);
+    //      }
+   //   }catch(SQLException | HeadlessException e){
+    //     JOptionPane.showMessageDialog(null, e); 
           
-    }                                     
+   // }                                     
     }                                  
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

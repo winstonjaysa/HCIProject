@@ -1093,7 +1093,8 @@ btnSave3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/plus
             getToolkit().beep();
             evt.consume();
     }//GEN-LAST:event_txtNoOfDaysKeyTyped
-
+    }
+    
     private void txtNoOfDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoOfDaysActionPerformed
 
         double add1 = Double.parseDouble(txtRoomCharges.getText());
