@@ -362,6 +362,7 @@ private void fillcombo()
         jPanel2.setBackground(new java.awt.Color(0, 153, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
+        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/plus.png"))); // NOI18N
         btnNew.setText("New");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -369,6 +370,7 @@ private void fillcombo()
             }
         });
 
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/floppy-disk.png"))); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -376,6 +378,7 @@ private void fillcombo()
             }
         });
 
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/remove.png"))); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -384,6 +387,7 @@ private void fillcombo()
             }
         });
 
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/system-update.png"))); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.setEnabled(false);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -392,6 +396,7 @@ private void fillcombo()
             }
         });
 
+        btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/table.png"))); // NOI18N
         btnGetData.setText("Get Data");
         btnGetData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
