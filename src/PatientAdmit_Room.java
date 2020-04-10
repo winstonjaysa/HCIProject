@@ -407,7 +407,7 @@ private void fillcombo()
         });
 
         btnGetData.setBackground(new java.awt.Color(255, 255, 255));
-        btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/table.png"))); // NOI18N
+        btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
         btnGetData.setText("Get Data");
         btnGetData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
