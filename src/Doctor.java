@@ -233,20 +233,20 @@ PreparedStatement pst=null;
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Doctor Details Form");
+        jLabel12.setText("Doctor Registration Form");
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/bill.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Doctors-add.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(291, 291, 291)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(257, 257, 257))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +258,7 @@ PreparedStatement pst=null;
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel12)
-                        .addGap(31, 31, 31))))
+                        .addGap(30, 30, 30))))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 102));
