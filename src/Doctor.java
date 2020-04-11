@@ -507,7 +507,7 @@ private void Reset()
             btnSave.setEnabled(false);
 
         }catch(HeadlessException | SQLException ex){
-            JOptionPane.showMessageDialog(this,ex);
+           // JOptionPane.showMessageDialog(this,ex);
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -525,7 +525,7 @@ private void Reset()
                 Reset();
             }
         }catch(HeadlessException | SQLException ex){
-            JOptionPane.showMessageDialog(this,ex);
+           // JOptionPane.showMessageDialog(this,ex);
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -540,7 +540,7 @@ private void Reset()
             btnUpdate.setEnabled(false);
 
         }catch(HeadlessException | SQLException ex){
-            JOptionPane.showMessageDialog(this,ex);
+          //  JOptionPane.showMessageDialog(this,ex);
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
