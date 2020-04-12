@@ -93,6 +93,7 @@ PreparedStatement pst=null;
         btnOK.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnOK.setForeground(new java.awt.Color(255, 255, 255));
         btnOK.setText("Login");
+        btnOK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOK.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnOKMouseClicked(evt);
