@@ -131,7 +131,7 @@ PreparedStatement pst=null;
                 frm.txtAdmitID.setText(add17);
                 
                 frm.btnUpdate.setEnabled(true);
-                frm.btnDelete.setEnabled(true);
+              //  frm.btnDelete.setEnabled(true);
                 frm.btnSave.setEnabled(false);
              
             }
