@@ -152,9 +152,8 @@ private void fillcombo()
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Remarks");
 
-        PatientID.setEditable(false);
-
         txtPatientName.setEditable(false);
+        txtPatientName.setEnabled(false);
 
         txtAdmitDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
@@ -165,8 +164,10 @@ private void fillcombo()
         jLabel22.setText("(DD/MM/YYYY)");
 
         txtGender.setEditable(false);
+        txtGender.setEnabled(false);
 
         txtBloodGroup.setEditable(false);
+        txtBloodGroup.setEnabled(false);
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Disease");
@@ -182,6 +183,8 @@ private void fillcombo()
 
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Doctor Name");
+
+        txtDisease.setEnabled(false);
 
         txtDoctorID.setEditable(false);
 

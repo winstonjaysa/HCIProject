@@ -16,7 +16,7 @@ public class Connect {
              try{
            
           Class.forName("com.mysql.jdbc.Driver");
-         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hms_db","root","");
+         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hms_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
           return con;
             
         }catch(ClassNotFoundException | SQLException e){
