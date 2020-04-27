@@ -237,11 +237,20 @@ PreparedStatement pst=null;
       String sql= "select Username,User_Password from users where Username='" + txtUsername.getText() + "' and User_Password= '" + txtOldPassword.getText() + "'";
       pst=con.prepareStatement(sql);
       rs= pst.executeQuery();
-      while(rs.next())
+      if (rs.next()== false)
         {
-            String usrname = rs.getString("username").trim();
-            String passwd = rs.getString("user_password").trim();
-            if(uName.equals(usrname) && OldPass.equals(passwd))
+             JOptionPane.showMessageDialog(this,"invalid user name or password","Error", JOptionPane.ERROR_MESSAGE);   
+             txtUsername.setText("");
+             txtOldPassword.setText("");
+             txtNewPassword.setText("");
+             txtConfirmPassword.setText("");
+             return;
+        } else {
+          
+          
+            //String usrname = rs.getString("username").trim();
+            //String passwd = rs.getString("user_password").trim();
+            do
             {
                 con=Connect.ConnectDB();
                  String sql1= "update users set User_password= '" + Newpass + "' where Username= '" + uName + "' and User_password = '" + OldPass + "'";
@@ -251,17 +260,10 @@ PreparedStatement pst=null;
                  JOptionPane.showMessageDialog(this,"Password Successfully Changed");
                  this.dispose();
                  return;
-              }
-            else
-            {
-             JOptionPane.showMessageDialog(this,"invalid user name or password","Error", JOptionPane.ERROR_MESSAGE);   
-             txtUsername.setText("");
-             txtOldPassword.setText("");
-             txtNewPassword.setText("");
-             txtConfirmPassword.setText("");
-             return;
-            }
-        }    
+              } while (rs.next());
+           
+            
+        }  
         }catch(SQLException | HeadlessException ex){
            JOptionPane.showMessageDialog(this,ex); 
         }
