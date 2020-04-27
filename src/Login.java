@@ -60,7 +60,7 @@ PreparedStatement pst=null;
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Login.jpg"))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel2.setBackground(new java.awt.Color(255, 204, 51));
 
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 14)); // NOI18N
         jLabel1.setText("U s e r n a m e");

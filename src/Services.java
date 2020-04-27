@@ -76,7 +76,7 @@ PreparedStatement pst=null;
         txtPatientID = new javax.swing.JTextField();
         txtPatientName = new javax.swing.JTextField();
         txtServiceCharges = new javax.swing.JTextField();
-        txtServiceDate = new org.netbeans.modules.form.InvalidComponent();
+        txtServiceDate = new datechooser.beans.DateChooserCombo();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPatient = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
@@ -158,7 +158,7 @@ PreparedStatement pst=null;
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
                         .addComponent(txtServiceCharges, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3))
@@ -166,7 +166,7 @@ PreparedStatement pst=null;
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,6 +361,7 @@ PreparedStatement pst=null;
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setPreferredSize(new java.awt.Dimension(0, 10));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -623,7 +624,7 @@ PreparedStatement pst=null;
     public javax.swing.JTextField txtPatientID;
     public javax.swing.JTextField txtPatientName;
     public javax.swing.JTextField txtServiceCharges;
-    public org.netbeans.modules.form.InvalidComponent txtServiceDate;
+    public datechooser.beans.DateChooserCombo txtServiceDate;
     public javax.swing.JTextField txtServiceID;
     public javax.swing.JTextField txtServiceName;
     // End of variables declaration//GEN-END:variables
