@@ -76,7 +76,7 @@ PreparedStatement pst=null;
         txtPatientID = new javax.swing.JTextField();
         txtPatientName = new javax.swing.JTextField();
         txtServiceCharges = new javax.swing.JTextField();
-        txtServiceDate = new datechooser.beans.DateChooserCombo();
+        txtServiceDate = new org.netbeans.modules.form.InvalidComponent();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPatient = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
@@ -361,7 +361,6 @@ PreparedStatement pst=null;
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setPreferredSize(new java.awt.Dimension(0, 10));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -624,7 +623,7 @@ PreparedStatement pst=null;
     public javax.swing.JTextField txtPatientID;
     public javax.swing.JTextField txtPatientName;
     public javax.swing.JTextField txtServiceCharges;
-    public datechooser.beans.DateChooserCombo txtServiceDate;
+    public org.netbeans.modules.form.InvalidComponent txtServiceDate;
     public javax.swing.JTextField txtServiceID;
     public javax.swing.JTextField txtServiceName;
     // End of variables declaration//GEN-END:variables

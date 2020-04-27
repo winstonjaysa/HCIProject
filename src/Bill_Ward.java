@@ -1,5 +1,6 @@
 
 
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
@@ -110,6 +111,10 @@ PreparedStatement pst=null;
         jPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Billing");
@@ -599,10 +604,9 @@ PreparedStatement pst=null;
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtBillingDate, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                     .addComponent(txtNoOfDays)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtDueCharges, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                        .addComponent(txtTotalBedCharges, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtTotalPaid, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addComponent(txtDueCharges, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                    .addComponent(txtTotalBedCharges)
+                    .addComponent(txtTotalPaid))
                 .addGap(63, 63, 63))
         );
         jPanel7Layout.setVerticalGroup(
@@ -684,6 +688,28 @@ PreparedStatement pst=null;
                 .addComponent(jLabel18)
                 .addContainerGap())
         );
+
+        jMenu2.setText("Theme");
+
+        jMenuItem1.setText("Dark Mode");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("Default");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -954,6 +980,40 @@ private void Reset() throws ParseException
         this.setLocation(x-axisx,y-axisy);
     }//GEN-LAST:event_formMouseDragged
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       
+        
+
+        
+        jPanel4.setBackground(new Color(15,15,10));
+        jPanel2.setBackground(new Color(77,77,51));
+        jPanel8.setBackground(new Color(140, 140, 104));
+        jPanel1.setBackground(new Color(140, 140, 104));
+        jPanel5.setBackground(new Color(173,173,133));
+        jPanel6.setBackground(new Color(173,173,133));
+        jPanel7.setBackground(new Color(173,173,133));
+        jTable1.setBackground(new Color(204,204,179));
+        
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        
+        jPanel4.setBackground(new Color(204,204,0));
+        jPanel2.setBackground(new Color(0,153,102));
+        jPanel8.setBackground(new Color(0,102,102));
+        jPanel1.setBackground(new Color(0,102,102));
+        jPanel5.setBackground(new Color(0,153,102));
+        jPanel6.setBackground(new Color(0,153,102));
+        jPanel7.setBackground(new Color(0,153,102));
+        jTable1.setBackground(new Color(0,204,102));
+       
+        
+        
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     private void Get_Data1(){
       try{
         con=Connect.ConnectDB();
@@ -1035,6 +1095,10 @@ private void Reset() throws ParseException
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

@@ -25,6 +25,9 @@ public class Bill_Room extends javax.swing.JFrame {
 Connection con=null;
 ResultSet rs=null;
 PreparedStatement pst=null;
+    private Object header;
+    private Object jPanel2;
+    private Object tblPatient;
     /**
      * Creates new form Bill_Room
      */
@@ -118,6 +121,10 @@ PreparedStatement pst=null;
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Billing");
@@ -602,7 +609,6 @@ PreparedStatement pst=null;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setFocusable(false);
         jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(0, 204, 102));
@@ -780,6 +786,29 @@ PreparedStatement pst=null;
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("Theme");
+
+        jMenuItem2.setText("Dark Mode");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem1.setText("Default");
+        jMenuItem1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/url1.jpg"))); // NOI18N
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -990,6 +1019,32 @@ private void Reset()
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        
+        
+        jPanel4.setBackground(new Color(204,204,0));
+        jPanel8.setBackground(new Color(0,153,102));
+        jPanel5.setBackground(new Color(0,102,102));
+        jPanel7.setBackground(new Color(0,102,102));
+        jPanel3.setBackground(new Color(0,153,102));
+        jPanel1.setBackground(new Color(0,153,102));
+        jTable1.setBackground(new Color(0,204,102));
+        
+        
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       jPanel4.setBackground(new Color(15,15,10));
+        jPanel8.setBackground(new Color(77,77,51));
+        jPanel5.setBackground(new Color(140, 140, 104));
+        jPanel7.setBackground(new Color(140, 140, 104));
+        jPanel3.setBackground(new Color(173,173,133));
+        jPanel1.setBackground(new Color(173,173,133));
+        jTable1.setBackground(new Color(204,204,179));
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     private void Get_Data1(){
       try{
         con=Connect.ConnectDB();
@@ -1072,6 +1127,10 @@ private void Reset()
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
