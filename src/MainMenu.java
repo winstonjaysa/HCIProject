@@ -617,7 +617,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jPanel10.setBackground(new java.awt.Color(0, 158, 118));
+        jPanel10.setBackground(new java.awt.Color(0, 204, 153));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -682,7 +682,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel12.setBackground(new java.awt.Color(238, 238, 104));
+        jPanel12.setBackground(new java.awt.Color(0, 153, 153));
         jPanel12.setPreferredSize(new java.awt.Dimension(100, 80));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -746,7 +746,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel14.setBackground(new java.awt.Color(0, 158, 118));
+        jPanel14.setBackground(new java.awt.Color(0, 204, 153));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel21.setText("Total Nurses & Ward Boys");
@@ -777,10 +777,10 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel15.setBackground(new java.awt.Color(238, 238, 104));
+        jPanel15.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Doctors Onduty");
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -840,7 +840,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel17.setBackground(new java.awt.Color(0, 158, 118));
+        jPanel17.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -872,7 +872,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel18.setBackground(new java.awt.Color(238, 238, 104));
+        jPanel18.setBackground(new java.awt.Color(0, 204, 153));
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel25.setText("Today");
