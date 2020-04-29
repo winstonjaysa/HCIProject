@@ -276,7 +276,7 @@ PreparedStatement pst=null;
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(136, 136, 136)
                 .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSave)
@@ -306,7 +306,7 @@ PreparedStatement pst=null;
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        header.setBackground(new java.awt.Color(255, 204, 51));
+        header.setBackground(new java.awt.Color(51, 255, 153));
         header.setName(""); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
