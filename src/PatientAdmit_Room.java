@@ -30,13 +30,13 @@ PreparedStatement pst=null;
     public PatientAdmit_Room() {
         initComponents();
         setLocationRelativeTo(null);
-      //  fillcombo();
+        fillcombo();
      //   fillcomboroom();
-       // cmbRoomNo.setSelectedIndex(-1);
-       // cmbRoomNo1.setVisible(false);
- //       txtAdmitID.setVisible(false);
-        // Get_Data1();
-       //  GetRecord();
+        cmbRoomNo.setSelectedIndex(-1);
+        cmbRoomNo1.setVisible(false);
+      //  txtAdmitID.setVisible(false);
+         Get_Data1();
+         GetRecord();
     }
 private void fillcombo()
 {
@@ -653,9 +653,10 @@ private void fillcombo()
                     return;
                 }
             }
+                 String date =  ((JTextField)jDateChooser2.getDateEditor().getUiComponent()).getText();
 
-//            String sql= " update AdmitPatient_Room set  PatientID='"+ PatientID.getText() + "',Disease='"+ txtDisease.getText() + "',AdmitDate='"+ txtAdmitDate.getText() + "',RoomNo='"+ cmbRoomNo.getSelectedItem()+ "',DoctorID='" + txtDoctorID.getText() + "',AP_Remarks='"+ txtRemarks.getText() + "' where AdmitID= " + txtAdmitID.getText() + "";
-           // pst=con.prepareStatement(sql);
+            String sql= " update AdmitPatient_Room set  PatientID='"+ PatientID.getText() + "',Disease='"+ txtDisease.getText() + "',AdmitDate='"+ date+ "',RoomNo='"+ cmbRoomNo.getSelectedItem()+ "',DoctorID='" + txtDoctorID.getText() + "',AP_Remarks='"+ txtRemarks.getText() + "' where AdmitID= " + date + "";
+            pst=con.prepareStatement(sql);
             pst.execute();
 
             if (!t.equals(s))
@@ -680,21 +681,22 @@ private void fillcombo()
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-//        try{
-//            int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
-//            if (P==0)
-//            {
-//                con=Connect.ConnectDB();
-//       //         String sql= "delete from AdmitPatient_Room where AdmitID = " + txtAdmitID.getText() + "";
-////                pst=con.prepareStatement(sql);
-////                pst.execute();
-////                JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
-//
-//                Reset();
-//            }
-//        }catch(HeadlessException | SQLException ex){
-//            JOptionPane.showMessageDialog(this,ex);
-//        }
+        try{
+            int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
+            if (P==0)
+            {
+                con=Connect.ConnectDB();
+                 String date =  ((JTextField)jDateChooser2.getDateEditor().getUiComponent()).getText();
+                String sql= "delete from AdmitPatient_Room where AdmitID = " + date + "";
+                pst=con.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
+
+                Reset();
+            }
+        }catch(HeadlessException | SQLException ex){
+            JOptionPane.showMessageDialog(this,ex);
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
