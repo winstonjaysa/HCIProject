@@ -29,6 +29,13 @@ PreparedStatement pst=null;
         setLocationRelativeTo(null);
     }
 
+    public ChangePassword(String usr) {
+        initComponents();
+        setLocationRelativeTo(null);
+        txtUsername.setText(usr);
+        //txtUsername.isEnabled(false);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,6 +71,7 @@ PreparedStatement pst=null;
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("User Name");
 
+        txtUsername.setEditable(false);
         txtUsername.setBackground(new java.awt.Color(239, 239, 239));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
