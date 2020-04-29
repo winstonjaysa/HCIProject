@@ -21,7 +21,7 @@ PreparedStatement pst=null;
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
-                 }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -242,8 +242,7 @@ PreparedStatement pst=null;
           rs= pst.executeQuery();
           if (rs.next()){
              this.hide();
-             MainMenu frm=new MainMenu();
-             frm.setVisible(true);
+             new MainMenu(txtUserName.getText()).setVisible(true);
           }
           else{
               
@@ -273,8 +272,7 @@ PreparedStatement pst=null;
           rs= pst.executeQuery();
           if (rs.next()){
              this.hide();
-             MainMenu frm=new MainMenu();
-             frm.setVisible(true);
+             new MainMenu(txtUserName.getText()).setVisible(true);
           }
           else{
               
