@@ -651,7 +651,7 @@ private void fillcombo()
                     return;
                 }
             }
-                 String date =  ((JTextField)jDateChooser2.getDateEditor().getUiComponent()).getText();
+                 String date =  jDateChooser2.getText();
 
             String sql= " update AdmitPatient_Room set  PatientID='"+ PatientID.getText() + "',Disease='"+ txtDisease.getText() + "',AdmitDate='"+ date+ "',RoomNo='"+ cmbRoomNo.getSelectedItem()+ "',DoctorID='" + txtDoctorID.getText() + "',AP_Remarks='"+ txtRemarks.getText() + "' where AdmitID= " + date + "";
             pst=con.prepareStatement(sql);
@@ -684,7 +684,7 @@ private void fillcombo()
             if (P==0)
             {
                 con=Connect.ConnectDB();
-                 String date =  ((JTextField)jDateChooser2.getDateEditor().getUiComponent()).getText();
+                 String date =  jDateChooser2.getText();
                 String sql= "delete from AdmitPatient_Room where AdmitID = " + date + "";
                 pst=con.prepareStatement(sql);
                 pst.execute();
