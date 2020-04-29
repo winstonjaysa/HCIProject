@@ -45,7 +45,7 @@ private void Reset()
     txtAdmitDate.setText("");
     txtRoomNo.setText("");
     txtRemarks.setText("");
-    txtDischargeDate.setText("");
+    dateChooserCombo1.setText("");
     btnSave.setEnabled(true);
     btnUpdate.setEnabled(false);
     btnDelete.setEnabled(false);
@@ -67,7 +67,6 @@ private void Reset()
         PatientID = new javax.swing.JTextField();
         txtPatientName = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         txtGender = new javax.swing.JTextField();
         txtBloodGroup = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
@@ -82,10 +81,9 @@ private void Reset()
         txtRemarks = new javax.swing.JTextArea();
         txtRoomNo = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtDischargeDate = new javax.swing.JFormattedTextField();
-        jLabel36 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new datechooser.beans.DateChooserCombo();
+        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         jPanel1 = new javax.swing.JPanel();
         btnNew = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
@@ -129,9 +127,6 @@ private void Reset()
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Gender");
 
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("(DD/MM/YYYY)");
-
         txtGender.setEditable(false);
 
         txtBloodGroup.setEditable(false);
@@ -166,11 +161,6 @@ private void Reset()
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Discharge Date");
 
-        txtDischargeDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
-
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("(DD/MM/YYYY)");
-
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/arrow.png"))); // NOI18N
         jButton1.setPreferredSize(new java.awt.Dimension(41, 21));
@@ -202,25 +192,19 @@ private void Reset()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel30))
+                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(PatientID, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtBloodGroup)
+                        .addComponent(txtBloodGroup, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                         .addComponent(txtGender)
                         .addComponent(txtDisease)
                         .addComponent(txtDoctorName)
                         .addComponent(txtDoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtRoomNo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(txtDischargeDate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel36)))
+                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -248,11 +232,9 @@ private void Reset()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel32)
-                        .addComponent(jLabel30))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32)
                     .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -266,11 +248,10 @@ private void Reset()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
                     .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDischargeDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36)
-                    .addComponent(jLabel7))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -411,7 +392,7 @@ private void Reset()
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
    try{
        
-        String date =  ((JTextField)jDateChooser2.getDateEditor().getUiComponent()).getText();
+        String date =  jDateChooser2.getText();
         txtAdmitDate.setText(date);
             con=Connect.ConnectDB();
               if (PatientID.getText().equals("")) {
@@ -450,7 +431,7 @@ private void Reset()
                 return;
 
             }
-             if (txtDischargeDate.getText().equals("")) {
+             if (dateChooserCombo1.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter discharge date","Error", JOptionPane.ERROR_MESSAGE);
                 return;
 
@@ -464,7 +445,7 @@ private void Reset()
         return;
       }
      
-            String sql= "insert into DischargePatient_Room(AdmitID,DischargeDate,DP_Remarks)values("+ txtAdmitID.getText() + ",'"+ txtDischargeDate.getText() + "','"+ txtRemarks.getText() + "')";
+            String sql= "insert into DischargePatient_Room(AdmitID,DischargeDate,DP_Remarks)values("+ txtAdmitID.getText() + ",'"+ dateChooserCombo1.getText() + "','"+ txtRemarks.getText() + "')";
 
             pst=con.prepareStatement(sql);
             pst.execute();
@@ -505,7 +486,7 @@ private void Reset()
     try{
             con=Connect.ConnectDB();
        
-            String sql= "update DischargePatient_Room set AdmitID="+ txtAdmitID.getText() + ",DischargeDate='"+ txtDischargeDate.getText() + "',DP_Remarks='"+ txtRemarks.getText() + "' where ID= " + txtDischargeID.getText() + "";
+            String sql= "update DischargePatient_Room set AdmitID="+ txtAdmitID.getText() + ",DischargeDate='"+ dateChooserCombo1.getText() + "',DP_Remarks='"+ txtRemarks.getText() + "' where ID= " + txtDischargeID.getText() + "";
             pst=con.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(this,"Successfully updated","Record",JOptionPane.INFORMATION_MESSAGE);
@@ -563,21 +544,20 @@ private void Reset()
     private javax.swing.JButton btnNew;
     public javax.swing.JButton btnSave;
     public javax.swing.JButton btnUpdate;
+    public datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private datechooser.beans.DateChooserCombo jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    public javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -590,7 +570,6 @@ private void Reset()
     public javax.swing.JFormattedTextField txtAdmitDate;
     public javax.swing.JTextField txtAdmitID;
     public javax.swing.JTextField txtBloodGroup;
-    public javax.swing.JFormattedTextField txtDischargeDate;
     public javax.swing.JTextField txtDischargeID;
     public javax.swing.JTextField txtDisease;
     public javax.swing.JTextField txtDoctorID;

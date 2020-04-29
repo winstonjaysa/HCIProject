@@ -102,9 +102,9 @@
                           </Group>
                       </Group>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jDateChooser2" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="236" max="32767" attributes="0"/>
+                  <EmptySpace pref="248" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -355,10 +355,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="txtAdmitDate"/>
-          </AccessibilityProperties>
+        <Component class="datechooser.beans.DateChooserCombo" name="jDateChooser2">
         </Component>
       </SubComponents>
     </Container>

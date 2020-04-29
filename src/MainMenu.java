@@ -28,7 +28,7 @@ public class MainMenu extends javax.swing.JFrame {
         setLocationRelativeTo(this);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         Get_Data1();
-        
+        dateChooserCombo1.setVisible(false);
     }
         
     public MainMenu(String id) {
@@ -38,6 +38,7 @@ public class MainMenu extends javax.swing.JFrame {
         Get_Data1();
         jLabel1.setText("Welcome " + id + " :)");
         username = id; 
+        dateChooserCombo1.setVisible(false);
     }
 
     private void Get_Data1(){
@@ -91,15 +92,15 @@ public class MainMenu extends javax.swing.JFrame {
              jLabel22.setText(rs.getString("count"));
          }
          
-         sql="select COUNT(*) as count from admitpatient_room where AdmitDate = CURRENT_DATE()";
-         
+         sql="select COUNT(*) as count from admitpatient_room where AdmitDate = '" + dateChooserCombo1.getText() + "'";
+         System.out.println(sql);
          pst=con.prepareStatement(sql);
          rs= pst.executeQuery();
          while (rs.next()){
              jLabel26.setText(rs.getString("count"));
          }
          
-         sql="select COUNT(*) as count from dischargepatient_room where DischargeDate = CURRENT_DATE()";
+         sql="select COUNT(*) as count from dischargepatient_room where DischargeDate = '" + dateChooserCombo1.getText() + "'";
          
          pst=con.prepareStatement(sql);
          rs= pst.executeQuery();
@@ -187,6 +188,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
+        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
 
         jMenu6.setText("jMenu6");
 
@@ -950,6 +952,8 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton14)
                         .addGap(18, 18, 18)
                         .addComponent(jButton13)
@@ -964,7 +968,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton13)
-                    .addComponent(jButton14))
+                    .addComponent(jButton14)
+                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(14, 14, 14)
@@ -1163,6 +1168,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;

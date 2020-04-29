@@ -180,7 +180,7 @@ PreparedStatement pst=null;
                 String add17= Integer.toString(add16);
                 frm.txtAdmitID.setText(add17);
                 String add18=rs.getString("DischargeDate");
-                frm.txtDischargeDate.setText(add18);
+                frm.dateChooserCombo1.setText(add18);
                 String add19=rs.getString("DP_Remarks");
                  frm.txtRemarks.setText(add19);
                  int add20 = rs.getInt("ID");

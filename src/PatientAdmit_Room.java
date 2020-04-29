@@ -30,13 +30,13 @@ PreparedStatement pst=null;
     public PatientAdmit_Room() {
         initComponents();
         setLocationRelativeTo(null);
-      //  fillcombo();
-     //   fillcomboroom();
-       // cmbRoomNo.setSelectedIndex(-1);
-       // cmbRoomNo1.setVisible(false);
- //       txtAdmitID.setVisible(false);
-        // Get_Data1();
-       //  GetRecord();
+        fillcombo();
+        fillcomboroom();
+        cmbRoomNo.setSelectedIndex(-1);
+        cmbRoomNo1.setVisible(false);
+        //txtAdmitID.setVisible(false);
+         Get_Data1();
+         GetRecord();
     }
 private void fillcombo()
 {
@@ -109,7 +109,7 @@ private void fillcombo()
         txtRemarks = new javax.swing.JTextArea();
         cmbRoomNo = new javax.swing.JComboBox();
         cmbRoomNo1 = new javax.swing.JComboBox();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new datechooser.beans.DateChooserCombo();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -255,8 +255,8 @@ private void fillcombo()
                             .addComponent(txtDoctorID, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(134, 134, 134)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(236, Short.MAX_VALUE))
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,8 +308,6 @@ private void fillcombo()
                         .addComponent(jLabel10)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
-
-        jDateChooser2.getAccessibleContext().setAccessibleName("txtAdmitDate");
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 600, 500));
 
@@ -759,7 +757,7 @@ private void fillcombo()
                 return;
             }
             
-            String date =  ((JTextField)jDateChooser2.getDateEditor().getUiComponent()).getText();
+            String date =  jDateChooser2.getText();
             String sql= "insert into AdmitPatient_Room(PatientID,Disease,AdmitDate,RoomNo,DoctorID,AP_Remarks)values('"+ PatientID.getText() + "','"+ txtDisease.getText() + "','"+ date + "','"+ cmbRoomNo.getSelectedItem()+ "','" + txtDoctorID.getText() + "','"+ txtRemarks.getText() + "')";
 
             pst=con.prepareStatement(sql);
@@ -852,7 +850,7 @@ private void Reset()
     public javax.swing.JComboBox cmbRoomNo1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private datechooser.beans.DateChooserCombo jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
