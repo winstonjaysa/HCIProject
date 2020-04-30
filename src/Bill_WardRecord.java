@@ -121,9 +121,8 @@ PreparedStatement pst=null;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1306, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jButton2)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -264,4 +263,4 @@ PreparedStatement pst=null;
     public javax.swing.JTextField txtDischargeID;
     // End of variables declaration//GEN-END:variables
 }
-//done
+//done11
