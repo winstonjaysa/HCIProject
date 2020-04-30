@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import net.proteanit.sql.DbUtils;
 
 /*
@@ -34,9 +35,10 @@ PreparedStatement pst=null;
      */
     public Bill_Ward() {
         initComponents();
-   //     txtBillNo.setVisible(false);
-   //     txtDischargeID.setVisible(false);
-   //     txtAdmitID.setVisible(false);
+        txtBillNo.setVisible(false);
+        txtDischargeID.setVisible(false);
+        txtAdmitID.setVisible(false);
+        
         setLocationRelativeTo(null);
         Get_Data1();
     }
@@ -95,6 +97,9 @@ PreparedStatement pst=null;
         cmbPaymentMode = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         txtTotalCharges = new javax.swing.JTextField();
+        txtBillNo = new javax.swing.JTextField();
+        txtDischargeID = new javax.swing.JTextField();
+        txtAdmitID = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         txtNoOfDays = new javax.swing.JTextField();
@@ -154,7 +159,7 @@ PreparedStatement pst=null;
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
-        btnNew.setText("New");
+        btnNew.setText("Reset");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
@@ -277,6 +282,11 @@ PreparedStatement pst=null;
         jLabel5.setText("Patient ID");
 
         PatientID.setEditable(false);
+        PatientID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PatientIDActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/arrow.png"))); // NOI18N
@@ -292,6 +302,11 @@ PreparedStatement pst=null;
         jLabel6.setText("Patient Name");
 
         txtPatientName.setEditable(false);
+        txtPatientName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatientNameActionPerformed(evt);
+            }
+        });
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
@@ -339,6 +354,11 @@ PreparedStatement pst=null;
 
         txtDischargeDate.setEditable(false);
         txtDischargeDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        txtDischargeDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDischargeDateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -478,6 +498,48 @@ PreparedStatement pst=null;
             }
         });
 
+        txtBillNo.setEditable(false);
+        txtBillNo.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtBillNoInputMethodTextChanged(evt);
+            }
+        });
+        txtBillNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBillNoActionPerformed(evt);
+            }
+        });
+
+        txtDischargeID.setEditable(false);
+        txtDischargeID.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtDischargeIDInputMethodTextChanged(evt);
+            }
+        });
+        txtDischargeID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDischargeIDActionPerformed(evt);
+            }
+        });
+
+        txtAdmitID.setEditable(false);
+        txtAdmitID.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtAdmitIDInputMethodTextChanged(evt);
+            }
+        });
+        txtAdmitID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAdmitIDActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -492,14 +554,21 @@ PreparedStatement pst=null;
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(txtBedCharges, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(cmbPaymentMode, 0, 120, Short.MAX_VALUE)
                     .addComponent(txtPaymentModeDetails)
                     .addComponent(txtServiceCharges, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTotalCharges))
+                    .addComponent(txtTotalCharges)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(txtBedCharges, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(55, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtBillNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDischargeID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAdmitID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(94, 94, 94))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -510,7 +579,7 @@ PreparedStatement pst=null;
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtBedCharges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
-                        .addGap(67, 67, 67)
+                        .addGap(92, 92, 92)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cmbPaymentMode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
@@ -527,7 +596,13 @@ PreparedStatement pst=null;
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(txtTotalCharges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtAdmitID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBillNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtDischargeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         jPanel7.setBackground(new java.awt.Color(0, 153, 102));
@@ -729,8 +804,9 @@ PreparedStatement pst=null;
                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                .addContainerGap())
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -757,11 +833,10 @@ PreparedStatement pst=null;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-private void Reset() throws ParseException
-{
-    String dateValue="0/0/0";
-    Date date = new SimpleDateFormat("yyyy-mm-dd").parse(dateValue);
 
+    
+    private void Reset()
+{
     txtDoctorID.setText("");
     txtDoctorName.setText("");
     PatientID.setText("");
@@ -769,7 +844,7 @@ private void Reset() throws ParseException
     txtBloodGroup.setText("");
     txtGender.setText("");
     txtDisease.setText("");
-    txtAdmitDate.setDate(date);
+  //  txtAdmitDate.setText("");
     txtWardname.setText("");
     txtServiceCharges.setText("");
     txtBedCharges.setText("");
@@ -777,7 +852,7 @@ private void Reset() throws ParseException
     txtTotalCharges.setText("");
     txtTotalPaid.setText("");
     txtDueCharges.setText("");
-    txtBillingDate.setDate(date);
+  //  txtBillingDate.setText("");
     cmbPaymentMode.setSelectedIndex(-1);
     txtDischargeDate.setText("");
     txtNoOfDays.setText("");
@@ -786,23 +861,34 @@ private void Reset() throws ParseException
     btnUpdate.setEnabled(false);
     btnDelete.setEnabled(false);
     }
+    
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-          try{
+          
+     
+        
+        
+        try{
             con=Connect.ConnectDB();
             int row= jTable1.getSelectedRow();
             String val =jTable1.getModel().getValueAt(row,2).toString();
+            String pid =jTable1.getModel().getValueAt(row,0).toString();
+            String pname =jTable1.getModel().getValueAt(row,1).toString();
+            String gender =jTable1.getModel().getValueAt(row,3).toString();
+            String bloodgroup =jTable1.getModel().getValueAt(row,4).toString();
             txtServiceCharges.setText(val);
+            PatientID.setText(pid);
+            txtPatientName.setText(pname);
+            txtGender.setText(gender);
+            txtBloodGroup.setText(bloodgroup);
         }catch(Exception ex){
             JOptionPane.showMessageDialog(this,ex);
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-    try {
+    
         Reset();
-    } catch (ParseException ex) {
-        Logger.getLogger(Bill_Ward.class.getName()).log(Level.SEVERE, null, ex);
-    }
+   
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void txtBedChargesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBedChargesActionPerformed
@@ -820,11 +906,9 @@ private void Reset() throws ParseException
                 pst.execute();
                 JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
 
-                try {
+                
                     Reset();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Bill_Ward.class.getName()).log(Level.SEVERE, null, ex);
-                }
+               
             }
         }catch(HeadlessException | SQLException ex){
             JOptionPane.showMessageDialog(this,ex);
@@ -838,7 +922,10 @@ private void Reset() throws ParseException
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
       try{
             con=Connect.ConnectDB();
-              if (PatientID.getText().equals("")) {
+            
+           
+            
+             if (PatientID.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please retrieve Patient ID","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -851,30 +938,23 @@ private void Reset() throws ParseException
                 return;
             }
          
-            if (txtBillingDate.getDate().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter billing date","Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if (txtTotalPaid.getText().equals("")) {
+           if (txtTotalPaid.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter total paid","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-                double add1 = Double.parseDouble(txtTotalCharges.getText());
-                double add2 = Double.parseDouble(txtTotalPaid.getText());
-             if (add2 > add1) {
-                JOptionPane.showMessageDialog( this, "Total Paid is more than total Charges","Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-        Statement stmt;
+          
+           
+           
+           Statement stmt;
        stmt= con.createStatement();
-       String sql1="Select DischargeID from Bill_Ward where DischargeID= " + txtDischargeID.getText() + "";
+       String sql1="Select PatientID from Bill_Ward where PatientID= " + PatientID.getText() + "";
       rs=stmt.executeQuery(sql1);
       if(rs.next()){
         JOptionPane.showMessageDialog( this, "Record already exists","Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
-     
-            String sql= "insert into Bill_Ward(DischargeID,BillingDate,BedCharges,ServiceCharges,PaymentMode,PaymentModeDetails,ChargesPaid,DueCharges,TotalCharges,NoOfDays,TotalBedCharges)values(" + txtDischargeID.getText() + ",'"+ txtBillingDate.getDate() + "',"+ txtBedCharges.getText() + ","+ txtServiceCharges.getText() + ",'" + cmbPaymentMode.getSelectedItem()+ "','" + txtPaymentModeDetails.getText() + "',"+ txtTotalPaid.getText() + ","+ txtDueCharges.getText() + ","+ txtTotalCharges.getText() +","+ txtNoOfDays.getText() + "," + txtTotalBedCharges.getText() +")";
+            String date = ((JTextField)txtBillingDate.getDateEditor().getUiComponent()).getText();
+            String sql= "insert into Bill_Ward(PatientID,BillingDate,BedCharges,ServiceCharges,PaymentMode,PaymentModeDetails,ChargesPaid,DueCharges,TotalCharges,NoOfDays,TotalBedCharges)values('" + PatientID.getText() + "','" + date + "','" + txtBedCharges.getText() + "','" + txtServiceCharges.getText() + "','" + cmbPaymentMode.getSelectedItem()+ "','" + txtPaymentModeDetails.getText() + "','" + txtTotalPaid.getText() + "','" + txtDueCharges.getText() + "','" + txtTotalCharges.getText() + "','" + txtNoOfDays.getText() + "','" + txtTotalBedCharges.getText() +"')";
             pst=con.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(this,"Successfully saved","Record",JOptionPane.INFORMATION_MESSAGE);
@@ -883,6 +963,36 @@ private void Reset() throws ParseException
         }catch(HeadlessException | SQLException ex){
             JOptionPane.showMessageDialog(this,ex);
         }
+      
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           double add1 = Double.parseDouble(txtTotalCharges.getText());
+                double add2 = Double.parseDouble(txtTotalPaid.getText());
+             if (add2 > add1) {
+                JOptionPane.showMessageDialog( this, "Total Paid is more than total Charges","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+             
+          
+                
+        
+      
+       if (txtBillingDate.getDate().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter billing date","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+      
+      
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -1014,10 +1124,52 @@ private void Reset() throws ParseException
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    
+    
+    
+    
+    
+    
+    private void txtDischargeDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDischargeDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDischargeDateActionPerformed
+
+    private void PatientIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PatientIDActionPerformed
+
+    private void txtBillNoInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtBillNoInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBillNoInputMethodTextChanged
+
+    private void txtBillNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBillNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBillNoActionPerformed
+
+    private void txtDischargeIDInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtDischargeIDInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDischargeIDInputMethodTextChanged
+
+    private void txtDischargeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDischargeIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDischargeIDActionPerformed
+
+    private void txtAdmitIDInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtAdmitIDInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdmitIDInputMethodTextChanged
+
+    private void txtAdmitIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdmitIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdmitIDActionPerformed
+
+    private void txtPatientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatientNameActionPerformed
+
     private void Get_Data1(){
       try{
         con=Connect.ConnectDB();
-       String sql="select PatientRegistration.PatientID as 'Patient ID', PatientName as 'Patient Name',sum(serviceCharges) as 'Service Charges' from Services,PatientRegistration where Services.PatientID=PatientRegistration.PatientID group by PatientRegistration.PatientID,PatientName order by PatientName";
+       String sql="select PatientRegistration.PatientID as 'Patient ID', PatientName as 'Patient Name',sum(serviceCharges) as 'Service Charges',Gen as 'Gender',BG as 'Blood group' from Services,PatientRegistration where Services.PatientID=PatientRegistration.PatientID group by PatientRegistration.PatientID,PatientName order by PatientName";
          pst=con.prepareStatement(sql);
          rs= pst.executeQuery();
          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -1109,10 +1261,13 @@ private void Reset() throws ParseException
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private com.toedter.calendar.JDateChooser txtAdmitDate;
+    public javax.swing.JTextField txtAdmitID;
     public javax.swing.JTextField txtBedCharges;
+    public javax.swing.JTextField txtBillNo;
     private com.toedter.calendar.JDateChooser txtBillingDate;
     public javax.swing.JTextField txtBloodGroup;
     public javax.swing.JFormattedTextField txtDischargeDate;
+    public javax.swing.JTextField txtDischargeID;
     public javax.swing.JTextField txtDisease;
     public javax.swing.JTextField txtDoctorID;
     public javax.swing.JTextField txtDoctorName;
@@ -1154,3 +1309,4 @@ private void Reset() throws ParseException
         }
     }
 }
+//done
