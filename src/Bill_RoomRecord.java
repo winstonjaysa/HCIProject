@@ -31,13 +31,13 @@ PreparedStatement pst=null;
     
  private void Get_Data(){
          try{
-                 String sql="Select BillNo as 'Bill No.',DisChargePatient_Room.ID as 'Discharge ID', AdmitPatient_Room.AdmitID as 'Admit ID',PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Room.RoomNo as 'Room No',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DischargeDate as 'Discharge Date',Bill_Room.RoomCharges as 'Room Charges',Bill_Room.ServiceCharges as 'Service Charges',Bill_Room.BillingDate as 'Billing Date',PaymentMode as 'Payement Mode',PaymentModeDetails as 'Payment Mode Details',TotalCharges as 'Total Charges',ChargesPaid as 'Charges Paid',DueCharges as 'Due Charges',NoOfDays as 'No. Of Days',TotalRoomCharges as 'Total Room Charges' from Room,Doctor,PatientRegistration,AdmitPatient_Room,DischargePatient_Room,Bill_Room where Room.RoomNo=AdmitPatient_Room.RoomNo and Doctor.DoctorID=AdmitPatient_Room.DoctorID and PatientRegistration.PatientID=AdmitPatient_Room.PatientID  and AdmitPatient_Room.admitID= DischargePatient_Room.admitID and Bill_Room.DischargeID=DischargePatient_Room.ID  order by Billingdate"; 
+             String sql="Select BillNo as 'Bill No',DisChargePatient_Ward.PID as 'Discharge ID', AdmitPatient_Ward.AdmitID as 'Admit ID',PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Ward.WardName as 'Ward Name',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DischargeDate as 'Discharge Date',Bill_Room.RoomCharges as 'Bed Charges',Bill_Room.ServiceCharges as 'Service Charges',Bill_Room.BillingDate as 'Billing Date',PaymentMode as 'Payement Mode',PaymentModeDetails as 'Payment Mode Details',TotalCharges as 'Total Charges',ChargesPaid as 'Charges Paid',DueCharges as 'Due Charges',NoOfDays as 'No Of Days',TotalRoomCharges as 'Total Bed Charges' from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward,Bill_Room where AdmitPatient_Ward.admitID= DischargePatient_Ward.admitID and Bill_Room.DischargeID=DischargePatient_Ward.PID  order by Billingdate";
        pst=con.prepareStatement(sql);
           rs= pst.executeQuery();
          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
          }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-          
+     //     
 }
     }
     /**
@@ -52,6 +52,13 @@ PreparedStatement pst=null;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtAdmitID = new javax.swing.JTextField();
+        txtDischargeID = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Billing Record");
@@ -80,17 +87,62 @@ PreparedStatement pst=null;
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jPanel4.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Bill Room Details");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 250, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/bill.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 80, -1));
+
+        txtAdmitID.setBackground(new java.awt.Color(204, 204, 0));
+        txtAdmitID.setBorder(null);
+        jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
+
+        txtDischargeID.setBackground(new java.awt.Color(204, 204, 0));
+        txtDischargeID.setBorder(null);
+        jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/search.png"))); // NOI18N
+        jButton2.setOpaque(false);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1306, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1306, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE))
         );
 
         pack();
@@ -134,7 +186,7 @@ PreparedStatement pst=null;
               String add14= jTable1.getModel().getValueAt(row, 14).toString();
             frm.txtServiceCharges.setText(add14);
               String add15= jTable1.getModel().getValueAt(row, 15).toString();
-            frm.txtBillingDate.setText(add15);
+            frm.txtDueCharges.setText(add15);
               String add16= jTable1.getModel().getValueAt(row, 16).toString();
             frm.cmbPaymentMode.setSelectedItem(add16);
               String add17= jTable1.getModel().getValueAt(row, 17).toString();
@@ -142,7 +194,7 @@ PreparedStatement pst=null;
              String add18= jTable1.getModel().getValueAt(row, 18).toString();
             frm.txtTotalCharges.setText(add18);
              String add19= jTable1.getModel().getValueAt(row, 19).toString();
-            frm.txtTotalPaid.setText(add19);
+            frm.AdmitID.setText(add19);
              String add20= jTable1.getModel().getValueAt(row, 20).toString();
            // frm.txtDueCharges.setText(add20);
            //  String add21= jTable1.getModel().getValueAt(row, 21).toString();
@@ -165,6 +217,10 @@ PreparedStatement pst=null;
        Bill_Room frm = new Bill_Room();
        frm.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,7 +257,15 @@ PreparedStatement pst=null;
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField txtAdmitID;
+    public javax.swing.JTextField txtDischargeID;
     // End of variables declaration//GEN-END:variables
 }
+//done

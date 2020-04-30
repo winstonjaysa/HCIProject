@@ -29,7 +29,7 @@ PreparedStatement pst=null;
     }
  private void Get_Data(){
          try{
-             String sql="Select ID as 'Discharge ID', AdmitPatient_Ward.AdmitID as 'Admit ID',PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Ward.Wardname as 'Ward Name',Charges as 'Bed Charges',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DischargeDate as 'Discharge Date',DP_Remarks as 'Remarks' from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward where Ward.Wardname=AdmitPatient_Ward.Wardname and Doctor.DoctorID=AdmitPatient_Ward.DoctorID and PatientRegistration.PatientID=AdmitPatient_Ward.PatientID  and AdmitPatient_Ward.admitID= DischargePatient_Ward.admitID order by Dischargedate";
+             String sql="Select PID as 'Discharge ID', AdmitPatient_Ward.AdmitID as 'Admit ID',PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Ward.Wardname as 'Ward Name',Charges as 'Bed Charges',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DP_Remarks as 'Remarks' from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward where Ward.Wardname=AdmitPatient_Ward.Wardname and PatientRegistration.PatientID=AdmitPatient_Ward.PatientID order by AdmitPatient_Ward.Wardname";
              pst=con.prepareStatement(sql);
          rs= pst.executeQuery();
          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -49,6 +49,13 @@ PreparedStatement pst=null;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtAdmitID = new javax.swing.JTextField();
+        txtDischargeID = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Patient Discharge Record");
@@ -77,17 +84,58 @@ PreparedStatement pst=null;
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jPanel4.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Patient Discharge Details");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 310, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/ward_1.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 80, -1));
+
+        txtAdmitID.setBackground(new java.awt.Color(204, 204, 0));
+        txtAdmitID.setBorder(null);
+        jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
+
+        txtDischargeID.setBackground(new java.awt.Color(204, 204, 0));
+        txtDischargeID.setBorder(null);
+        jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/search.png"))); // NOI18N
+        jButton2.setOpaque(false);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1230, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 1230, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,7 +146,7 @@ PreparedStatement pst=null;
             con=Connect.ConnectDB();
             int row= jTable1.getSelectedRow();
             String table_click= jTable1.getModel().getValueAt(row, 0).toString();
-             String sql="Select * from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward where Ward.Wardname=AdmitPatient_Ward.Wardname and Doctor.DoctorID=AdmitPatient_Ward.DoctorID and PatientRegistration.PatientID=AdmitPatient_Ward.PatientID and AdmitPatient_Ward.AdmitID=DischargePatient_Ward.admitID and ID=" + table_click + "";   
+             String sql="Select * from Ward,Doctor,PatientRegistration,AdmitPatient_Ward";   
              pst=con.prepareStatement(sql);
             rs=  pst.executeQuery();
             if(rs.next()){
@@ -125,12 +173,12 @@ PreparedStatement pst=null;
                 frm.txtWardname.setText(add14);
                 int add16 = rs.getInt("AdmitID");
                 String add17= Integer.toString(add16);
-              //  frm.txtAdmitID.setText(add17);
-                String add18=rs.getString("DischargeDate");
-                frm.txtDischargeDate.setText(add18);
+                frm.txtAdmitID.setText(add17);
+              //  String add18=rs.getString("DischargeDate");
+              //  frm.txtDischargeDate.setText(add18);
                 int add20 = rs.getInt("ID");
                 String add21= Integer.toString(add20);
-            //    frm.txtDischargeID.setText(add21);
+                frm.txtDischargeID.setText(add21);
                 int add22 = rs.getInt("Charges");
                 String add23= Integer.toString(add22);
                 frm.txtBedCharges.setText(add23);
@@ -145,6 +193,10 @@ PreparedStatement pst=null;
        Bill_Ward frm = new Bill_Ward();
        frm.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,7 +233,15 @@ PreparedStatement pst=null;
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField txtAdmitID;
+    public javax.swing.JTextField txtDischargeID;
     // End of variables declaration//GEN-END:variables
 }
+//done
