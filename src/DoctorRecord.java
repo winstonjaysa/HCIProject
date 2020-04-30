@@ -120,7 +120,7 @@ PreparedStatement pst=null;
                 String add11=rs.getString("Gender");
                 frm.cmbGender.setSelectedItem(add11);
                 String add14=rs.getString("DateOfJoining");
-                frm.txtDateOfJoining.setText(add14);
+                //frm.txtDateOfJoining.setText(add14);
                 String add15=rs.getString("Address");
                 frm.txtAddress.setText(add15);
                 String add16=rs.getString("ContactNo");
