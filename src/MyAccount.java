@@ -139,7 +139,7 @@ String username;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 51));
+        jPanel3.setBackground(new java.awt.Color(51, 255, 153));
         jPanel3.setPreferredSize(new java.awt.Dimension(572, 92));
 
         jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
