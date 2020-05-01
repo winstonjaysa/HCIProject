@@ -36,20 +36,20 @@ PreparedStatement pst=null;
     }
 private void fillcombo()
 {
-//     try{
-//      
-//   con=Connect.ConnectDB();
-//      String sql= "select distinct Wardname from Ward order by Wardname";
-//      pst=con.prepareStatement(sql);
-//      rs=pst.executeQuery();
-//      while(rs.next()){
-//          String add=rs.getString("Wardname");
-//          cmbWardName.addItem(add);
-//          
-//         }
-//        }catch(HeadlessException | SQLException ex){
-//           JOptionPane.showMessageDialog(this,ex); 
-//        }
+    try{
+      
+   con=Connect.ConnectDB();
+      String sql= "select distinct Wardname from Ward order by Wardname";
+      pst=con.prepareStatement(sql);
+      rs=pst.executeQuery();
+      while(rs.next()){
+          String add=rs.getString("Wardname");
+          cmbWardName.addItem(add);
+          
+         }
+        }catch(HeadlessException | SQLException ex){
+           JOptionPane.showMessageDialog(this,ex); 
+        }
 }
  private void GetRecord(){
         String sql="select DoctorID as 'Doctor ID', DoctorName as 'Doctor Name' from Doctor order by DoctorName";
@@ -124,15 +124,15 @@ private void fillcombo()
         btnDelete = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Admit Patient");
+        setBackground(new java.awt.Color(0, 153, 102));
         setResizable(false);
 
         txtAdmitID.setEditable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(51, 255, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -302,6 +302,7 @@ private void fillcombo()
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
+        jTable1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 102)));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -320,7 +321,7 @@ private void fillcombo()
         });
         jScrollPane2.setViewportView(jTable1);
 
-        jTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 102)));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -340,22 +341,21 @@ private void fillcombo()
         });
         jScrollPane3.setViewportView(jTable2);
 
-        jPanel5.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel5.setBackground(new java.awt.Color(0, 153, 102));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Patient Admit Ward Form");
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 450, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\HCIProject-master\\src\\Buttons\\nurse_wardboy.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/nurse_wardboy.png"))); // NOI18N
+        jLabel4.setText("  Patient Admit Ward Form");
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 540, 90));
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(51, 255, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
-        btnNew.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\HCIProject-master\\src\\Buttons\\New.png")); // NOI18N
+        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
         btnNew.setText("New");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -364,7 +364,7 @@ private void fillcombo()
         });
 
         btnSave.setBackground(new java.awt.Color(255, 255, 255));
-        btnSave.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\HCIProject-master\\src\\Buttons\\Save.png")); // NOI18N
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,7 +373,7 @@ private void fillcombo()
         });
 
         btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\HCIProject-master\\src\\Buttons\\Update.png")); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.setEnabled(false);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -391,7 +391,7 @@ private void fillcombo()
             }
         });
 
-        btnDelete.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\HCIProject-master\\src\\Buttons\\Remove.png")); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -404,15 +404,15 @@ private void fillcombo()
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(28, 28, 28)
                 .addComponent(btnNew)
-                .addGap(18, 18, 18)
+                .addGap(41, 41, 41)
                 .addComponent(btnSave)
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(btnDelete)
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addComponent(btnUpdate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addComponent(btnGetData)
                 .addGap(43, 43, 43))
         );
@@ -425,21 +425,18 @@ private void fillcombo()
                     .addComponent(btnSave)
                     .addComponent(btnNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDelete)
-                    .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnUpdate))
                 .addGap(27, 27, 27))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/patient.png"))); // NOI18N
         jLabel3.setText("Patient Admit Ward Details");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 320, 33));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/admit.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 410, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -448,21 +445,21 @@ private void fillcombo()
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(505, 505, 505)
+                        .addComponent(txtAdmitID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane2)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(505, 505, 505)
-                        .addComponent(txtAdmitID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jScrollPane2))))))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -574,7 +571,7 @@ private void fillcombo()
                 return;
             }
             if (cmbWardName.getSelectedItem().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please select room no.","Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog( this, "Please select ward name","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -607,11 +604,11 @@ private void fillcombo()
                 return;
             }
 
-            String sql= "insert into AdmitPatient_Room(PatientID,Disease,AdmitDate,RoomNo,DoctorID,AP_Remarks)values('"+ PatientID.getText() + "','"+ txtDisease.getText() + "','"+ txtAdmitDate.getText() + "','"+ cmbWardName.getSelectedItem()+ "','" + txtDoctorID.getText() + "','"+ txtRemarks.getText() + "')";
+            String sql= "insert into AdmitPatient_Ward(PatientID,Disease,AdmitDate,Wardname,DoctorID,AP_Remarks)values('"+ PatientID.getText() + "','"+ txtDisease.getText() + "','"+ txtAdmitDate.getText() + "','"+ cmbWardName.getSelectedItem()+ "','" + txtDoctorID.getText() + "','"+ txtRemarks.getText() + "')";
 
             pst=con.prepareStatement(sql);
             pst.execute();
-            String sql3= "update room set RoomStatus='Booked' where RoomNo='" + cmbWardName.getSelectedItem() + "'";
+            String sql3= "update Ward set NoOfBeds=NoOfBeds - 1 where Wardname='" + cmbWardName.getSelectedItem() + "'";
             pst=con.prepareStatement(sql3);
             pst.execute();
             JOptionPane.showMessageDialog(this,"Successfully admitted","Patient",JOptionPane.INFORMATION_MESSAGE);
@@ -670,12 +667,27 @@ private void fillcombo()
 
     private void btnGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetDataActionPerformed
         this.hide();
-        PatientAdmit_RoomRecord frm= new PatientAdmit_RoomRecord();
+        PatientAdmit_WardRecord frm= new PatientAdmit_WardRecord();
         frm.setVisible(true);
     }//GEN-LAST:event_btnGetDataActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        try{
+            int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
+            if (P==0)
+            {
+                con=Connect.ConnectDB();
+                String sql= "delete from AdmitPatient_Ward where AdmitID = " + txtAdmitID.getText() + "";
+                pst=con.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
+
+                Reset();
+            }
+        }catch(HeadlessException | SQLException ex){
+            JOptionPane.showMessageDialog(this,ex);
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 private void Reset()
 {
@@ -750,7 +762,6 @@ private void Reset()
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -93,7 +94,7 @@ PreparedStatement pst=null;
         setTitle("Ward");
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -120,7 +121,7 @@ PreparedStatement pst=null;
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Ward Details"));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -234,12 +235,12 @@ PreparedStatement pst=null;
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        header.setBackground(new java.awt.Color(0, 51, 255));
+        header.setBackground(new java.awt.Color(0, 153, 102));
         header.setName(""); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\HCIProject-master\\src\\Buttons\\ward_1.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/ward_1.png"))); // NOI18N
         jLabel6.setText("Ward Details");
         jLabel6.setIconTextGap(10);
 
@@ -264,6 +265,7 @@ PreparedStatement pst=null;
         Ward_table.setBorder(javax.swing.BorderFactory.createTitledBorder("Ward Details"));
 
         tblWard.setBackground(new java.awt.Color(240, 231, 242));
+        tblWard.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 102)));
         tblWard.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -284,7 +286,7 @@ PreparedStatement pst=null;
         });
         Ward_table.setViewportView(tblWard);
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(51, 255, 153));
 
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
         btnNew.setText("New");
@@ -334,10 +336,10 @@ PreparedStatement pst=null;
             }
         });
 
-        txtPatientID.setBackground(new java.awt.Color(0, 153, 153));
+        txtPatientID.setBackground(new java.awt.Color(51, 255, 153));
         txtPatientID.setBorder(null);
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -350,7 +352,7 @@ PreparedStatement pst=null;
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
-        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel5.setBackground(new java.awt.Color(51, 255, 153));
         jPanel5.setPreferredSize(new java.awt.Dimension(0, 10));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -474,80 +476,6 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbWardTypeActionPerformed
 
-    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-        Reset();
-    }//GEN-LAST:event_btnNewActionPerformed
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        try{
-            con=Connect.ConnectDB();
-            if (txtWardName.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter service name","Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if (txtNoOfbeds.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter service date","Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if (txtPatientID.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please retrieve patient id","Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if (txtCharges.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter service charges","Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            String sql= "insert into Services(ServiceName,ServiceDate,PatientID,ServiceCharges)values('"+ txtWardName.getText() + "','"+ txtNoOfbeds.getText() + "','" + txtPatientID.getText() + "'," + txtCharges.getText() + ")";
-            pst=con.prepareStatement(sql);
-            pst.execute();
-
-            JOptionPane.showMessageDialog(this,"Successfully saved","Record",JOptionPane.INFORMATION_MESSAGE);
-            btnSave.setEnabled(false);
-        }catch(HeadlessException | SQLException ex){
-            JOptionPane.showMessageDialog(this,ex);
-        }
-    }//GEN-LAST:event_btnSaveActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        try{
-            int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
-            if (P==0)
-            {
-                con=Connect.ConnectDB();
-                String sql= "delete from Services where ServiceID = " + txtPatientID.getText() + "";
-                pst=con.prepareStatement(sql);
-                pst.execute();
-                JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
-
-                Reset();
-            }
-        }catch(HeadlessException | SQLException ex){
-            JOptionPane.showMessageDialog(this,ex);
-        }
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        try{
-            con=Connect.ConnectDB();
-
-            String sql= "update Services set Servicename='"+ txtWardName.getText() + "',ServiceDate='"+ txtNoOfbeds.getText() + "',PatientID='" + txtPatientID.getText() + "',ServiceCharges=" + txtCharges.getText() + " where ServiceID=" + txtPatientID.getText() + "";
-            pst=con.prepareStatement(sql);
-            pst.execute();
-
-            JOptionPane.showMessageDialog(this,"Successfully updated","Record",JOptionPane.INFORMATION_MESSAGE);
-            btnUpdate.setEnabled(false);
-        }catch(HeadlessException | SQLException ex){
-            JOptionPane.showMessageDialog(this,ex);
-        }
-    }//GEN-LAST:event_btnUpdateActionPerformed
-
-    private void btnGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetDataActionPerformed
-        this.hide();
-        ServicesRecord frm= new ServicesRecord();
-        frm.setVisible(true);
-    }//GEN-LAST:event_btnGetDataActionPerformed
-
     private void tblWardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblWardMouseClicked
         try{
             con=Connect.ConnectDB();
@@ -568,6 +496,90 @@ PreparedStatement pst=null;
             JOptionPane.showMessageDialog(this,ex);
         }
     }//GEN-LAST:event_tblWardMouseClicked
+
+    private void btnGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetDataActionPerformed
+        this.hide();
+        ServicesRecord frm= new ServicesRecord();
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnGetDataActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        try{
+            con=Connect.ConnectDB();
+
+            String sql= "update Ward set Wardtype='"+ cmbWardType.getSelectedItem() + "',NoOfBeds=" + txtNoOfbeds.getText() + ",Charges=" + txtCharges.getText() + " where Wardname='" + txtWardName.getText() + "'";
+            pst=con.prepareStatement(sql);
+            pst.execute();
+
+            JOptionPane.showMessageDialog(this,"Successfully updated","Record",JOptionPane.INFORMATION_MESSAGE);
+            btnUpdate.setEnabled(false);
+        }catch(HeadlessException | SQLException ex){
+            JOptionPane.showMessageDialog(this,ex);
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        try{
+            int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
+            if (P==0)
+            {
+                con=Connect.ConnectDB();
+
+                String sql= "delete from ward where Wardname = '" + txtWardName.getText() + "'";
+                pst=con.prepareStatement(sql);
+                pst.execute();
+                JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
+                Reset();
+            }
+        }catch(HeadlessException | SQLException ex){
+            JOptionPane.showMessageDialog(this,ex);
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        try{
+            con=Connect.ConnectDB();
+            if (txtWardName.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter ward name","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (cmbWardType.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter Number of Beds","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (txtNoOfbeds.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter txtNoOfbeds","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (txtCharges.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter ward charges","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            Statement stmt;
+            stmt= con.createStatement();
+            String sql1="Select Wardname from ward where wardname= '" + txtWardName.getText() + "'";
+            rs=stmt.executeQuery(sql1);
+            if(rs.next()){
+                JOptionPane.showMessageDialog( this, "ward name already exists","Error", JOptionPane.ERROR_MESSAGE);
+                txtWardName.setText("");
+                txtWardName.requestDefaultFocus();
+                return;
+            }
+
+            String sql= "insert into ward(Wardname,wardType,NoOfBeds,Charges)values('"+ txtWardName.getText() + "','"+ cmbWardType.getSelectedItem() + "'," + txtNoOfbeds.getText() + "," + txtCharges.getText() + ")";
+            pst=con.prepareStatement(sql);
+            pst.execute();
+
+            JOptionPane.showMessageDialog(this,"Successfully saved","Record",JOptionPane.INFORMATION_MESSAGE);
+            btnSave.setEnabled(false);
+        }catch(HeadlessException | SQLException ex){
+            JOptionPane.showMessageDialog(this,ex);
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
+        Reset();
+    }//GEN-LAST:event_btnNewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -605,11 +617,11 @@ PreparedStatement pst=null;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane Ward_table;
-    public javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnGetData;
     private javax.swing.JButton btnNew;
-    public javax.swing.JButton btnSave;
-    public javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cmbWardType;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
@@ -629,7 +641,7 @@ PreparedStatement pst=null;
     private javax.swing.JTable tblWard;
     public javax.swing.JTextField txtCharges;
     public javax.swing.JFormattedTextField txtNoOfbeds;
-    public javax.swing.JTextField txtPatientID;
+    private javax.swing.JTextField txtPatientID;
     public javax.swing.JTextField txtWardName;
     // End of variables declaration//GEN-END:variables
 }

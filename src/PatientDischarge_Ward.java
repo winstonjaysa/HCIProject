@@ -105,7 +105,7 @@ private void Reset()
         setTitle("Discharge Patient");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(51, 255, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -161,26 +161,25 @@ private void Reset()
         });
         jPanel1.add(btnGetData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel4.setBackground(new java.awt.Color(0, 153, 102));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Discharge.png"))); // NOI18N
         jLabel2.setText("Patient Discharge Ward Form");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\HCIProject-master\\src\\Buttons\\nurse_wardboy.png")); // NOI18N
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 80, -1));
 
-        txtAdmitID1.setBackground(new java.awt.Color(0, 51, 204));
+        txtAdmitID1.setBackground(new java.awt.Color(0, 153, 102));
         txtAdmitID1.setBorder(null);
         jPanel4.add(txtAdmitID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
 
-        txtDischargeID1.setBackground(new java.awt.Color(0, 51, 204));
+        txtDischargeID1.setBackground(new java.awt.Color(0, 153, 102));
         txtDischargeID1.setBorder(null);
         jPanel4.add(txtDischargeID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -188,22 +187,23 @@ private void Reset()
         jLabel1.setText("Patient Discharge Ward Details");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Discharge.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/nurse_wardboy.png"))); // NOI18N
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel3.setBackground(new java.awt.Color(51, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel3.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(0, 51, 51));
         jLabel5.setText("Patient ID");
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Patient Name");
 
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setForeground(new java.awt.Color(51, 51, 51));
         jLabel27.setText("Blood Group");
 
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setForeground(new java.awt.Color(51, 51, 51));
         jLabel28.setText("Remarks");
 
         PatientID.setEditable(false);
@@ -213,29 +213,28 @@ private void Reset()
         txtAdmitDate.setEditable(false);
         txtAdmitDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setForeground(new java.awt.Color(51, 51, 51));
         jLabel29.setText("Gender");
 
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("(DD/MM/YYYY)");
 
         txtGender.setEditable(false);
 
         txtBloodGroup.setEditable(false);
 
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setForeground(new java.awt.Color(51, 51, 51));
         jLabel31.setText("Disease");
 
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setForeground(new java.awt.Color(51, 51, 51));
         jLabel32.setText("Admit Date");
 
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setForeground(new java.awt.Color(51, 51, 51));
         jLabel33.setText("Ward Name");
 
-        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setForeground(new java.awt.Color(51, 51, 51));
         jLabel34.setText("Doctor ID");
 
-        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setForeground(new java.awt.Color(51, 51, 51));
         jLabel35.setText("Doctor Name");
 
         txtDisease.setEditable(false);
@@ -250,12 +249,11 @@ private void Reset()
 
         txtWardname.setEditable(false);
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Discharge Date");
 
         txtDischargeDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("(DD/MM/YYYY)");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/arrow.png"))); // NOI18N
@@ -307,7 +305,7 @@ private void Reset()
                         .addComponent(txtDischargeDate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,11 +375,9 @@ private void Reset()
                         .addGap(39, 39, 39)))
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -452,19 +448,19 @@ private void Reset()
 
             }
             Statement stmt;
-            stmt= con.createStatement();
-            String sql1="Select admitID from DischargePatient_Room where AdmitID= " + txtAdmitID.getText() + "";
-            rs=stmt.executeQuery(sql1);
-            if(rs.next()){
+                stmt= con.createStatement();
+                String sql1="Select admitID from DischargePatient_Ward where AdmitID= " + txtAdmitID.getText() + "";
+                rs=stmt.executeQuery(sql1);
+                if(rs.next()){
                 JOptionPane.showMessageDialog( this, "Record already exists","Error", JOptionPane.ERROR_MESSAGE);
                 return;
-            }
+                }
 
-            String sql= "insert into DischargePatient_Room(AdmitID,DischargeDate,DP_Remarks)values("+ txtAdmitID.getText() + ",'"+ txtDischargeDate.getText() + "','"+ txtRemarks.getText() + "')";
+            String sql= "insert into DischargePatient_Ward(AdmitID,DischargeDate,DP_Remarks)values("+ txtAdmitID.getText() + ",'"+ txtDischargeDate.getText() + "','"+ txtRemarks.getText() + "')";
 
             pst=con.prepareStatement(sql);
             pst.execute();
-            String sql3= "update room set RoomStatus='Vacant' where RoomNo='" + txtWardname.getText() + "'";
+            String sql3= "update Ward set NoOfBeds=NoOfBeds+1 where Wardname='" + txtWardname.getText() + "'";
             pst=con.prepareStatement(sql3);
             pst.execute();
             JOptionPane.showMessageDialog(this,"Successfully discharged","Patient",JOptionPane.INFORMATION_MESSAGE);
@@ -477,11 +473,12 @@ private void Reset()
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         try{
+            
             int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
             if (P==0)
             {
                 con=Connect.ConnectDB();
-                String sql= "delete from DischargePatient_Room where ID = " + txtDischargeID.getText() + "";
+                String sql= "delete from DischargePatient_Ward where ID = " + txtDischargeID.getText() + "";
                 pst=con.prepareStatement(sql);
                 pst.execute();
                 JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
@@ -497,7 +494,7 @@ private void Reset()
         try{
             con=Connect.ConnectDB();
 
-            String sql= "update DischargePatient_Room set AdmitID="+ txtAdmitID.getText() + ",DischargeDate='"+ txtDischargeDate.getText() + "',DP_Remarks='"+ txtRemarks.getText() + "' where ID= " + txtDischargeID.getText() + "";
+            String sql= "update DischargePatient_Ward set AdmitID="+ txtAdmitID.getText() + ",DischargeDate='"+ txtDischargeDate.getText() + "',DP_Remarks='"+ txtRemarks.getText() + "' where ID= " + txtDischargeID.getText() + "";
             pst=con.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(this,"Successfully updated","Record",JOptionPane.INFORMATION_MESSAGE);
@@ -510,7 +507,7 @@ private void Reset()
 
     private void btnGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetDataActionPerformed
         this.hide();
-        PatientDischargeRecord_Room frm= new PatientDischargeRecord_Room();
+        PatientDischargeRecord_Ward frm= new PatientDischargeRecord_Ward();
         frm.setVisible(true);
     }//GEN-LAST:event_btnGetDataActionPerformed
 
@@ -550,7 +547,7 @@ private void Reset()
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PatientDischarge_Room().setVisible(true);
+                new PatientDischarge_Ward().setVisible(true);
             }
         });
     }
