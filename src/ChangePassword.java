@@ -21,6 +21,7 @@ public class ChangePassword extends javax.swing.JFrame {
 Connection con=null;
 ResultSet rs=null;
 PreparedStatement pst=null;
+String username;
     /**
      * Creates new form ChangePassword
      */
@@ -33,6 +34,7 @@ PreparedStatement pst=null;
         initComponents();
         setLocationRelativeTo(null);
         txtUsername.setText(usr);
+        username = usr;
         //txtUsername.isEnabled(false);
     }
 
@@ -242,7 +244,7 @@ PreparedStatement pst=null;
             }
        
       con=Connect.ConnectDB();
-      String sql= "select Username,User_Password from users where Username='" + txtUsername.getText() + "' and User_Password= '" + txtOldPassword.getText() + "'";
+      String sql= "select Username, Password from Registration where Username='" + txtUsername.getText() + "' and Password= '" + txtOldPassword.getText() + "'";
       pst=con.prepareStatement(sql);
       rs= pst.executeQuery();
       if (rs.next()== false)
@@ -261,12 +263,13 @@ PreparedStatement pst=null;
             do
             {
                 con=Connect.ConnectDB();
-                 String sql1= "update users set User_password= '" + Newpass + "' where Username= '" + uName + "' and User_password = '" + OldPass + "'";
+                 String sql1= "update Registration set password= '" + Newpass + "' where Username= '" + uName + "' and password = '" + OldPass + "'";
                  Statement stmt = con.createStatement();
                  stmt.execute(sql1.toString());
                  stmt.close();
                  JOptionPane.showMessageDialog(this,"Password Successfully Changed");
                  this.dispose();
+                 new MyAccount(username).setVisible(true); 
                  return;
               } while (rs.next());
            
@@ -333,7 +336,7 @@ PreparedStatement pst=null;
             }
        
       con=Connect.ConnectDB();
-      String sql= "select Username,User_Password from users where Username='" + txtUsername.getText() + "' and User_Password= '" + txtOldPassword.getText() + "'";
+      String sql= "select Username, Password from Registration where Username='" + txtUsername.getText() + "' and Password= '" + txtOldPassword.getText() + "'";
       pst=con.prepareStatement(sql);
       rs= pst.executeQuery();
       while(rs.next())
@@ -343,12 +346,13 @@ PreparedStatement pst=null;
             if(uName.equals(usrname) && OldPass.equals(passwd))
             {
                 con=Connect.ConnectDB();
-                 String sql1= "update users set User_password= '" + Newpass + "' where Username= '" + uName + "' and User_password = '" + OldPass + "'";
+                 String sql1= "update Registration set password= '" + Newpass + "' where Username= '" + uName + "' and password = '" + OldPass + "'";
                  Statement stmt = con.createStatement();
                  stmt.execute(sql1.toString());
                  stmt.close();
                  JOptionPane.showMessageDialog(this,"Password Successfully Changed");
                  this.dispose();
+                 new MyAccount(username).setVisible(true); 
                  return;
               }
             else

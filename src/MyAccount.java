@@ -17,16 +17,50 @@ import javax.swing.JOptionPane;
  *
  * @author Raj
  */
-public class UsersRegistration extends javax.swing.JFrame {
+public class MyAccount extends javax.swing.JFrame {
 Connection con=null;
 ResultSet rs=null;
 PreparedStatement pst=null;
+String username;
     /**
      * Creates new form UsersRegistration
      */
-    public UsersRegistration() {
+    public MyAccount() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+    
+    public MyAccount(String id) {
+        initComponents();
+        setLocationRelativeTo(null);
+        username = id;
+        GetData();
+    }
+    
+    private void GetData(){
+       try{
+            con=Connect.ConnectDB();
+            
+            String sql= "select * from registration where username= '" + username + "'";
+            pst=con.prepareStatement(sql);
+            rs=  pst.executeQuery();
+            if(rs.next()){
+          
+                String add1=rs.getString("Username");
+                txtUserName.setText(add1);
+                String add2=rs.getString("Password");
+                txtPassword.setText(add2);
+                String add3=rs.getString("NameOfUser");
+                txtName.setText(add3);
+                String add4=rs.getString("ContactNo");
+                txtContactNo.setText(add4);
+                String add5=rs.getString("Email");
+                txtEmailID.setText(add5);
+            }
+          
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this,ex);
+        }
     }
     private void Reset()
 {
@@ -35,9 +69,9 @@ PreparedStatement pst=null;
     txtPassword.setText("");
     txtEmailID.setText("");
     txtContactNo.setText("");
-    Save.setEnabled(true);
-    Delete.setEnabled(false);
-    Update.setEnabled(false);
+//    Save.setEnabled(true);
+//    Delete.setEnabled(false);
+    Update.setEnabled(true);
     txtUserName.requestDefaultFocus();
    
 }
@@ -52,11 +86,7 @@ PreparedStatement pst=null;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        New = new javax.swing.JButton();
-        Save = new javax.swing.JButton();
-        Delete = new javax.swing.JButton();
         Update = new javax.swing.JButton();
-        GetData = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -72,6 +102,7 @@ PreparedStatement pst=null;
         txtEmailID = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtContactNo = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
 
@@ -83,45 +114,11 @@ PreparedStatement pst=null;
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        New.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
-        New.setText("New");
-        New.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewActionPerformed(evt);
-            }
-        });
-
-        Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
-        Save.setText("Save");
-        Save.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveActionPerformed(evt);
-            }
-        });
-
-        Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
-        Delete.setText("Delete");
-        Delete.setEnabled(false);
-        Delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteActionPerformed(evt);
-            }
-        });
-
         Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
         Update.setText("Update");
-        Update.setEnabled(false);
         Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateActionPerformed(evt);
-            }
-        });
-
-        GetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
-        GetData.setText("Get Data");
-        GetData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GetDataActionPerformed(evt);
             }
         });
 
@@ -130,30 +127,16 @@ PreparedStatement pst=null;
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(New)
-                .addGap(18, 18, 18)
-                .addComponent(Save)
-                .addGap(18, 18, 18)
-                .addComponent(Delete)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(Update)
-                .addGap(18, 18, 18)
-                .addComponent(GetData)
-                .addGap(10, 10, 10))
+                .addContainerGap(430, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(New, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Save)
-                        .addComponent(Delete)
-                        .addComponent(Update)
-                        .addComponent(GetData)))
-                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Update)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 51));
@@ -162,16 +145,16 @@ PreparedStatement pst=null;
         jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/User_Registration.png"))); // NOI18N
-        jLabel6.setText("User Registration Form");
+        jLabel6.setText("My Account");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
                 .addComponent(jLabel6)
-                .addGap(98, 98, 98))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,16 +185,19 @@ PreparedStatement pst=null;
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Name");
 
+        txtName.setEditable(false);
         txtName.setBackground(new java.awt.Color(244, 242, 242));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("User Name");
 
+        txtUserName.setEditable(false);
         txtUserName.setBackground(new java.awt.Color(244, 242, 242));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Password");
 
+        txtPassword.setEditable(false);
         txtPassword.setBackground(new java.awt.Color(244, 242, 242));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -226,6 +212,13 @@ PreparedStatement pst=null;
         txtContactNo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtContactNoKeyTyped(evt);
+            }
+        });
+
+        jButton1.setText("Change");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -246,12 +239,15 @@ PreparedStatement pst=null;
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmailID)
+                            .addComponent(txtContactNo)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                                    .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(txtContactNo)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtPassword)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton1)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -271,7 +267,8 @@ PreparedStatement pst=null;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -290,14 +287,14 @@ PreparedStatement pst=null;
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
+                .addGap(106, 106, 106))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -343,6 +340,7 @@ PreparedStatement pst=null;
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,104 +353,21 @@ PreparedStatement pst=null;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewActionPerformed
-    Reset();
-    }//GEN-LAST:event_NewActionPerformed
-
-    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-         try{
-      con=Connect.ConnectDB();
-       if (txtName.getText().equals("")) {
-           JOptionPane.showMessageDialog( this, "Please enter name","Error", JOptionPane.ERROR_MESSAGE);
-           return;
-            }
-        if (txtUserName.getText().equals("")) {
-           JOptionPane.showMessageDialog( this, "Please enter user name","Error", JOptionPane.ERROR_MESSAGE);
-           return;
-            }
-        String Password= String.valueOf(txtPassword.getPassword());
-         if (Password.equals("")) {
-           JOptionPane.showMessageDialog( this, "Please enter password","Error", JOptionPane.ERROR_MESSAGE);
-           return;
-            }
-          if (txtContactNo.getText().equals("")) {
-           JOptionPane.showMessageDialog( this, "Please enter contact no.","Error", JOptionPane.ERROR_MESSAGE);
-           return;
-            }
-          
-       Statement stmt;
-       stmt= con.createStatement();
-       String sql1="Select username from Registration where Username= '" + txtUserName.getText() + "'";
-      rs=stmt.executeQuery(sql1);
-      if(rs.next()){
-        JOptionPane.showMessageDialog( this, "User name already exists","Error", JOptionPane.ERROR_MESSAGE);
-        txtUserName.setText("");
-        txtUserName.requestDefaultFocus();
-       return;
-   }
-       String Password1= String.valueOf(txtPassword.getPassword());
-       String sql= "insert into Registration(username,password,nameofuser,Email,ContactNo)values('"+ txtUserName.getText() + "','" + Password1 + "','" + txtName.getText() + "','" + txtEmailID.getText() + "','" + txtContactNo.getText() + "')";
-      
-      pst=con.prepareStatement(sql);
-      pst.execute();
-       String sql2= "insert into Users(username,user_password)values('" + txtUserName.getText() + "','" + Password1 + "')";
-      
-      pst=con.prepareStatement(sql2);
-      pst.execute();
-      JOptionPane.showMessageDialog(this,"Successfully Registered","User",JOptionPane.INFORMATION_MESSAGE); 
-      Save.setEnabled(false);
-        }catch(HeadlessException | SQLException ex){
-           JOptionPane.showMessageDialog(this,ex); 
-                }
-    }//GEN-LAST:event_SaveActionPerformed
-
-    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-          try
-          {
-        int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
-     if (P==0)
-     {
-        con=Connect.ConnectDB();
-       
-        String sql= "delete from Registration where Username = '" + txtUserName.getText() + "'";
-        pst=con.prepareStatement(sql);
-        pst.execute();  
-         String sql1= "delete from Users where Username = '" + txtUserName.getText() + "'";
-        pst=con.prepareStatement(sql1);
-        pst.execute(); 
-        JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE); 
-        Reset();
-     }
-      }catch(HeadlessException | SQLException ex){
-           JOptionPane.showMessageDialog(this,ex); 
-                }
-         
-    }//GEN-LAST:event_DeleteActionPerformed
-
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
     try{
       con=Connect.ConnectDB();
      String Password1= String.valueOf(txtPassword.getPassword());
-       String sql= "update Registration set password='" + Password1 + "',nameofuser='" + txtName.getText() + "',Email='" + txtEmailID.getText() + "',ContactNo='" + txtContactNo.getText() + "' where Username='" + txtUserName.getText() + "'";
+       String sql= "update Registration set Email='" + txtEmailID.getText() + "',ContactNo='" + txtContactNo.getText() + "' where Username='" + txtUserName.getText() + "'";
       
       pst=con.prepareStatement(sql);
       pst.execute();
-       String sql2= "update Users set user_password='" + Password1 + "' where username='" + txtUserName.getText() + "'";
       
-      pst=con.prepareStatement(sql2);
-      pst.execute();
       JOptionPane.showMessageDialog(this,"Successfully updated","User info",JOptionPane.INFORMATION_MESSAGE); 
       Update.setEnabled(false);
         }catch(HeadlessException | SQLException ex){
            JOptionPane.showMessageDialog(this,ex); 
                 }
     }//GEN-LAST:event_UpdateActionPerformed
-
-    private void GetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetDataActionPerformed
-      this.hide();
-      UsersRegistrationRecord frm = new UsersRegistrationRecord();
-      frm.setVisible(true); 
-    }//GEN-LAST:event_GetDataActionPerformed
 
     private void txtContactNoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactNoKeyTyped
    char c=evt.getKeyChar();
@@ -461,6 +376,12 @@ PreparedStatement pst=null;
           evt.consume();
     }          
     }//GEN-LAST:event_txtContactNoKeyTyped
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new ChangePassword(username).setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -479,30 +400,28 @@ PreparedStatement pst=null;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UsersRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UsersRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UsersRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UsersRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new UsersRegistration().setVisible(true);
+                new MyAccount().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton Delete;
-    private javax.swing.JButton GetData;
-    private javax.swing.JButton New;
-    public javax.swing.JButton Save;
     public javax.swing.JButton Update;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

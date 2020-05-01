@@ -227,7 +227,7 @@ PreparedStatement pst=null;
           
             }*/
       con=Connect.ConnectDB();
-      String sql= "select * from users where UserName= '" + txtUserName.getText() + "' and user_Password ='" + txtPassword.getText() + "'";
+      String sql= "select * from Registration where UserName= '" + txtUserName.getText() + "' and Password ='" + txtPassword.getText() + "'";
       try
       {
           pst=con.prepareStatement(sql);
@@ -257,7 +257,7 @@ PreparedStatement pst=null;
     private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
      if (evt.getKeyCode()==KeyEvent.VK_ENTER){
            con=Connect.ConnectDB();
-      String sql= "select * from users where UserName= '" + txtUserName.getText() + "' and user_Password ='" + txtPassword.getText() + "'";
+      String sql= "select * from Registration where UserName= '" + txtUserName.getText() + "' and Password ='" + txtPassword.getText() + "'";
       try
       {
           pst=con.prepareStatement(sql);

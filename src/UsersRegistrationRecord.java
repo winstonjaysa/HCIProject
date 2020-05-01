@@ -99,7 +99,7 @@ PreparedStatement pst=null;
             rs=  pst.executeQuery();
             if(rs.next()){
                 this.hide();
-                UsersRegistration frm = new UsersRegistration();
+                MyAccount frm = new MyAccount();
                 frm.setVisible(true);
                 String add1=rs.getString("Username");
                 frm.txtUserName.setText(add1);
@@ -111,8 +111,8 @@ PreparedStatement pst=null;
                 frm.txtContactNo.setText(add4);
                 String add5=rs.getString("Email");
                 frm.txtEmailID.setText(add5);
-                frm.Save.setEnabled(false);
-                frm.Delete.setEnabled(true);
+//                frm.Save.setEnabled(false);
+//                frm.Delete.setEnabled(true);
                 frm.Update.setEnabled(true);
             }
           
@@ -123,7 +123,7 @@ PreparedStatement pst=null;
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
   this.hide();
-  UsersRegistration frm = new UsersRegistration();
+  MyAccount frm = new MyAccount();
   frm.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
