@@ -85,7 +85,7 @@ public class AdminCheck extends javax.swing.JFrame {
         // TODO add your handling code here:
        
         if (jPasswordField1.getText().equals("QWERTY")){
-            LoginDetails frm = new LoginDetails();
+            AccountDetails frm = new AccountDetails();
             frm.setVisible(true);
             this.hide();
         } else {
