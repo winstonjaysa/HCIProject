@@ -498,9 +498,8 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_tblWardMouseClicked
 
     private void btnGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetDataActionPerformed
-        this.hide();
-        ServicesRecord frm= new ServicesRecord();
-        frm.setVisible(true);
+                Get_Data();
+
     }//GEN-LAST:event_btnGetDataActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed

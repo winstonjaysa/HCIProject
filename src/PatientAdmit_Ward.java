@@ -585,26 +585,26 @@ private void fillcombo()
                 return;
 
             }
-            Statement stmt1;
-            stmt1= con.createStatement();
-            String sql2="Select RoomNo from Room where RoomNo= '" + cmbWardName.getSelectedItem()+ "' and RoomStatus='Booked'";
-            rs=stmt1.executeQuery(sql2);
-            if(rs.next()){
-                JOptionPane.showMessageDialog( this, "Room is already booked","Error", JOptionPane.ERROR_MESSAGE);
-                cmbWardName.setSelectedItem("");
-                cmbWardName.requestDefaultFocus();
-                return;
-            }
-            Statement stmt;
-            stmt= con.createStatement();
-            String sql1="Select PatientID,AdmitDate from AdmitPatient_Room where PatientID= '" + PatientID.getText() + "' and AdmitDate='" + txtAdmitDate + "'";
-            rs=stmt.executeQuery(sql1);
-            if(rs.next()){
-                JOptionPane.showMessageDialog( this, "Record already exists","Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+           Statement stmt1;
+       stmt1= con.createStatement();
+       String sql2="Select Wardname from Ward where Wardname= '" + cmbWardName.getSelectedItem()+ "' and NoOfbeds<=0";
+      rs=stmt1.executeQuery(sql2);
+      if(rs.next()){
+        JOptionPane.showMessageDialog( this, "Beds are not available","Error", JOptionPane.ERROR_MESSAGE);
+        cmbWardName.setSelectedItem("");
+        cmbWardName.requestDefaultFocus();
+       return;
+      }
+       Statement stmt;
+       stmt= con.createStatement();
+       String sql1="Select PatientID,AdmitDate from AdmitPatient_Room where PatientID= '" + PatientID.getText() + "' and AdmitDate='" + txtAdmitDate + "'";
+      rs=stmt.executeQuery(sql1);
+      if(rs.next()){
+        JOptionPane.showMessageDialog( this, "Record already exists","Error", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
 
-            String sql= "insert into AdmitPatient_Ward(PatientID,Disease,AdmitDate,Wardname,DoctorID,AP_Remarks)values('"+ PatientID.getText() + "','"+ txtDisease.getText() + "','"+ txtAdmitDate.getText() + "','"+ cmbWardName.getSelectedItem()+ "','" + txtDoctorID.getText() + "','"+ txtRemarks.getText() + "')";
+           String sql= "insert into AdmitPatient_Ward(PatientID,Disease,AdmitDate,Wardname,DoctorID,AP_Remarks)values('"+ PatientID.getText() + "','"+ txtDisease.getText() + "','"+ txtAdmitDate.getText() + "','"+ cmbWardName.getSelectedItem()+ "','" + txtDoctorID.getText() + "','"+ txtRemarks.getText() + "')";
 
             pst=con.prepareStatement(sql);
             pst.execute();
@@ -640,23 +640,21 @@ private void fillcombo()
                 }
             }
 
-            //            String sql= " update AdmitPatient_Room set  PatientID='"+ PatientID.getText() + "',Disease='"+ txtDisease.getText() + "',AdmitDate='"+ txtAdmitDate.getText() + "',RoomNo='"+ cmbRoomNo.getSelectedItem()+ "',DoctorID='" + txtDoctorID.getText() + "',AP_Remarks='"+ txtRemarks.getText() + "' where AdmitID= " + txtAdmitID.getText() + "";
-            // pst=con.prepareStatement(sql);
+                    String sql= " update AdmitPatient_Ward set PatientID='"+ PatientID.getText() + "',Disease='"+ txtDisease.getText() + "',AdmitDate='"+ txtAdmitDate.getText() + "',Wardname='"+ cmbWardName.getSelectedItem()+ "',DoctorID='" + txtDoctorID.getText() + "',AP_Remarks='"+ txtRemarks.getText() + "' where AdmitID= " + txtAdmitID.getText() + "";
+            pst=con.prepareStatement(sql);
             pst.execute();
-
+           if (!t.equals(s))
+       {
+             String sql3= "update Ward set NoOfBeds=NoOfBeds - 1 where Wardname='" + cmbWardName.getSelectedItem() + "'";
+           pst=con.prepareStatement(sql3);
+            pst.execute();
+       }
             if (!t.equals(s))
-            {
-                String sql3= "update room set RoomStatus='Booked' where RoomNo='" + cmbWardName.getSelectedItem() + "'";
-                pst=con.prepareStatement(sql3);
-                pst.execute();
-            }
-
-            if (!t.equals(s))
-            {
-                String sql4= "update room set RoomStatus='Vacant' where RoomNo='" + cmbWardName1.getSelectedItem() + "'";
-                pst=con.prepareStatement(sql4);
-                pst.execute();
-            }
+       {
+             String sql4= "update Ward set NoOfBeds=NoOfBeds + 1 where Wardname='" + cmbWardName1.getSelectedItem() + "'";
+             pst=con.prepareStatement(sql4);
+            pst.execute();
+       }
             JOptionPane.showMessageDialog(this,"Successfully updated","Patient Record",JOptionPane.INFORMATION_MESSAGE);
             btnUpdate.setEnabled(false);
 
@@ -736,7 +734,7 @@ private void Reset()
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PatientAdmit_Room().setVisible(true);
+                new PatientAdmit_Ward().setVisible(true);
             }
         });
     }
