@@ -455,9 +455,9 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtID" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                                   <Component id="txtName" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
-                                  <Component id="txtAddress" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
                                   <Component id="cmbCategory" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                                   <Component id="txtContactNo" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Component id="txtAddress" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -483,17 +483,20 @@
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cmbCategory" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="txtAddress" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtContactNo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
