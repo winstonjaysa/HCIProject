@@ -548,7 +548,7 @@ private void Reset()
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         try{
             if (txtDoctorID.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter doctor id","Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog( this, "Invalid doctor id","Error", JOptionPane.ERROR_MESSAGE);
                 return;
 
             }else{
@@ -571,7 +571,7 @@ private void Reset()
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         try{
              if (txtDoctorID.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter doctor id","Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog( this, "Invalid doctor id","Error", JOptionPane.ERROR_MESSAGE);
                 return;
 
             }else{

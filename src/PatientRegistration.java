@@ -520,7 +520,7 @@ private void Reset()
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
     try{
         if (txtPatientID.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter patient id","Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog( this, "Invalid patient id","Error", JOptionPane.ERROR_MESSAGE);
                 return;
 
             }else{
@@ -549,7 +549,7 @@ frm.setVisible(true);
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
  try{
      if (txtPatientID.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter patient id","Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog( this, "Invalid patient id","Error", JOptionPane.ERROR_MESSAGE);
                 return;
 
             }else{
