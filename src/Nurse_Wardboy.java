@@ -278,7 +278,7 @@ private void Reset()
         cmbBloodGroup.setSelectedIndex(-1);
 
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("(DD/MM/YYYY)");
+        jLabel22.setText("(MM/DD/YYYY)");
 
         cmbCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nurse", "Wardboy" }));
         cmbCategory.setSelectedIndex(-1);

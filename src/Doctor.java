@@ -285,7 +285,7 @@ PreparedStatement pst=null;
         cmbGender.setSelectedIndex(-1);
 
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("(DD/MM/YYYY)");
+        jLabel22.setText("(MM/DD/YYYY)");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
