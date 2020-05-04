@@ -462,7 +462,10 @@ private void Reset()
                 JOptionPane.showMessageDialog( this, "Please enter contact no.","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-         
+         if (txtContactNo.getText().length() >10  ) {
+                JOptionPane.showMessageDialog( this, "Please enter a valid contact no.","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             if (txtQualifications.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter qualifications","Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -506,6 +509,11 @@ private void Reset()
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
    try
         {
+            if (txtID.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Invalid nurse/wardboy id","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+
+            }else{
             int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
             if (P==0)
             {
@@ -515,7 +523,7 @@ private void Reset()
                 pst.execute();
                 JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
                 Reset();
-            }
+            }}
         }catch(HeadlessException | SQLException ex){
             JOptionPane.showMessageDialog(this,ex);
         }
@@ -523,6 +531,11 @@ private void Reset()
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
   try{
+       if (txtID.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Invalid nurse/wardboy id","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+
+            }else{
             con=Connect.ConnectDB();
             String date = txtDateOfJoining.getText();
             String sql= "update nurse_wardboy set Name='"+ txtName.getText() + "',Category='"+ cmbCategory.getSelectedItem()+ "',Email='"+ txtEmailID.getText() + "',ContactNo='"+ txtContactNo.getText() + "',Qualifications='"+ txtQualifications.getText() + "',BloodGroup='"+ cmbBloodGroup.getSelectedItem() + "',DateOfJoining='" + date + "',Address='" + txtAddress.getText() + "' where Nurse_WardboyID='" + txtID.getText() + "'";
@@ -531,7 +544,7 @@ private void Reset()
             pst.execute();
             JOptionPane.showMessageDialog(this,"Successfully updated","Record",JOptionPane.INFORMATION_MESSAGE);
             btnUpdate.setEnabled(false);
-
+       }
         }catch(HeadlessException | SQLException ex){
             JOptionPane.showMessageDialog(this,ex);
         }    

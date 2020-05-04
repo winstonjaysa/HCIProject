@@ -476,6 +476,10 @@ private void Reset()
                 JOptionPane.showMessageDialog( this, "Please enter contact no.","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+           if (txtContactNo.getText().length() >10  ) {
+                JOptionPane.showMessageDialog( this, "Please enter a valid contact no.","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
          
             if (txtAge.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter age","Error", JOptionPane.ERROR_MESSAGE);
@@ -515,6 +519,11 @@ private void Reset()
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
     try{
+        if (txtPatientID.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter patient id","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+
+            }else{
             int P = JOptionPane.showConfirmDialog(null," Are you sure want to delete ?","Confirmation",JOptionPane.YES_NO_OPTION);
             if (P==0)
             {
@@ -525,7 +534,7 @@ private void Reset()
                 JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
 
                 Reset();
-            }
+            }}
         }catch(HeadlessException | SQLException ex){
             JOptionPane.showMessageDialog(this,ex);
         }
@@ -539,6 +548,11 @@ frm.setVisible(true);
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
  try{
+     if (txtPatientID.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter patient id","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+
+            }else{
             con=Connect.ConnectDB();
           
             String sql= "update PatientRegistration set Patientname='"+ txtPatientName.getText() + "',Fathername='"+ txtFathername.getText() + "',Email='"+ txtEmailID.getText() + "',ContactNo='"+ txtContactNo.getText() + "',Age=" + txtAge.getText() + ",Remarks='"+ txtRemarks.getText() + "',Gen='" + cmbGender.getSelectedItem() + "',BG='"+ cmbBloodGroup.getSelectedItem() + "',Address='" + txtAddress.getText() + "' where PatientID='" + txtPatientID.getText() + "'";
@@ -547,7 +561,7 @@ frm.setVisible(true);
             pst.execute();
             JOptionPane.showMessageDialog(this,"Successfully updated","Record",JOptionPane.INFORMATION_MESSAGE);
             btnUpdate.setEnabled(false);
-
+     }
         }catch(HeadlessException | SQLException ex){
             JOptionPane.showMessageDialog(this,ex);
         }  
