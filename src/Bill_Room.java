@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 //import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -39,16 +40,10 @@ PreparedStatement pst=null;
         txtBillNo.setVisible(false);
         txtDischargeID.setVisible(false);
         txtAdmitID.setVisible(false);
-        AdmitID.setVisible(false);
         
         setLocationRelativeTo(null);
         Get_Data1();
-        jTable1.getTableHeader().setFont(new Font("Segoe UI",Font.BOLD, 12));
-        jTable1.getTableHeader().setOpaque(false);
-        jTable1.getTableHeader().setBackground(new Color(0,133,102));
-        jTable1.getTableHeader().setForeground(new Color(255,255,255));
-        jTable1.setRowHeight(25);
-        
+       
     }
 
     
@@ -649,7 +644,7 @@ PreparedStatement pst=null;
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(600, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -826,7 +821,6 @@ PreparedStatement pst=null;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -839,7 +833,8 @@ PreparedStatement pst=null;
                             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1))
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -857,9 +852,7 @@ PreparedStatement pst=null;
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -1046,6 +1039,24 @@ private void Reset()
                 JOptionPane.showMessageDialog( this, "Please retrieve Patient ID","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+              
+              Date date;
+              date = txtAdmitDate.getDate();
+              
+              if (date == null) {
+                JOptionPane.showMessageDialog( this, "Please enter Admit date","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+              
+              
+              Date date1;
+              date1 = txtBillingDate.getDate();
+              
+              if (date1 == null) {
+                JOptionPane.showMessageDialog( this, "Please enter Billing date","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+              
             if (txtNoOfDays.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter no. of days","Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -1054,6 +1065,23 @@ private void Reset()
                 JOptionPane.showMessageDialog( this, "Please retrieve service charges","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+           
+           if (txtPaymentModeDetails.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter payment Mode Details","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+           
+           if (cmbPaymentMode.getSelectedItem()==null) {
+                JOptionPane.showMessageDialog( this, "Please select a Payement Method","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+           
+           if (txtDueCharges.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter Due charges","Error", JOptionPane.ERROR_MESSAGE);
+              return;
+            }
+           
+           
          
             if (txtTotalPaid.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter total paid","Error", JOptionPane.ERROR_MESSAGE);
@@ -1151,7 +1179,7 @@ private void Reset()
             if (P==0)
             {
                 con=Connect.ConnectDB();
-                String sql= "delete from Bill_Ward where BillNo = " + txtBillNo.getText() + "";
+                String sql= "delete from Bill_Room where BillNo = " + txtBillNo.getText() + "";
                 pst=con.prepareStatement(sql);
                 pst.execute();
                 JOptionPane.showMessageDialog(this,"Successfully deleted","Record",JOptionPane.INFORMATION_MESSAGE);
@@ -1165,16 +1193,16 @@ private void Reset()
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-//        try{
-//            con=Connect.ConnectDB();
-//            String sql= "update Bill_ward set DischargeID="+ txtDischargeID.getText() + ",BillingDate='"+ txtBillingDate.getDate() + "',BedCharges="+ txtBedCharges.getText() + ",ServiceCharges="+ txtServiceCharges.getText() + ",PaymentMode='" + cmbPaymentMode.getSelectedItem()+ "',PaymentModeDetails='" + txtPaymentModeDetails.getText() + "',ChargesPaid="+ txtTotalPaid.getText() + ",DueCharges="+ txtDueCharges.getText() + ",TotalCharges="+ txtTotalCharges.getText() + ",NoOfDays="+ txtNoOfDays.getText() +",TotalBedCharges=" + txtTotalBedCharges.getText() + " where BillNo= " + txtBillNo.getText() +"";  pst=con.prepareStatement(sql);
-//            pst.execute();
-//            JOptionPane.showMessageDialog(this,"Successfully Updated","Record",JOptionPane.INFORMATION_MESSAGE);
-//            btnUpdate.setEnabled(false);
-//
-//        }catch(HeadlessException | SQLException ex){
-//            JOptionPane.showMessageDialog(this,ex);
-//        }
+        try{
+            con=Connect.ConnectDB();
+            String sql= "update Bill_ward set DischargeID="+ txtDischargeID.getText() + ",BillingDate='"+ txtBillingDate.getDate() + ",ServiceCharges="+ txtServiceCharges.getText() + ",PaymentMode='" + cmbPaymentMode.getSelectedItem()+ "',PaymentModeDetails='" + txtPaymentModeDetails.getText() + "',ChargesPaid="+ txtTotalPaid.getText() + ",DueCharges="+ txtDueCharges.getText() + ",TotalCharges="+ txtTotalCharges.getText() + ",NoOfDays="+ txtNoOfDays.getText() + " where BillNo= " + txtBillNo.getText() +"";  pst=con.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(this,"Successfully Updated","Record",JOptionPane.INFORMATION_MESSAGE);
+            btnUpdate.setEnabled(false);
+
+        }catch(HeadlessException | SQLException ex){
+            JOptionPane.showMessageDialog(this,ex);
+        }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void txtTotalPaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalPaidActionPerformed

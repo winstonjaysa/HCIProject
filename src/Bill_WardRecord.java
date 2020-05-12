@@ -193,7 +193,7 @@ PreparedStatement pst=null;
              String add20= jTable1.getModel().getValueAt(row, 20).toString();
             frm.txtDueCharges.setText(add20);
              String add21= jTable1.getModel().getValueAt(row, 21).toString();
-            frm.txtNoOfDays.setText(add21);
+         //   frm.txtNoOfDays.setText(add21);
              String add22= jTable1.getModel().getValueAt(row, 22).toString();
             frm.txtTotalBedCharges.setText(add22);
             frm.PatientID.setText(add3);

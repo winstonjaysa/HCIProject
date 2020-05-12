@@ -929,10 +929,48 @@ PreparedStatement pst=null;
                 JOptionPane.showMessageDialog( this, "Please retrieve Patient ID","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+             
+             
+ 
             if (txtNoOfDays.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter no. of days","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+            
+           
+           if (txtPaymentModeDetails.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter payment Mode Details","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+           
+           Date date;
+              date = txtAdmitDate.getDate();
+              
+              if (date == null) {
+                JOptionPane.showMessageDialog( this, "Please enter Admit date","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+              
+              
+              Date date1;
+              date1 = txtBillingDate.getDate();
+              
+              if (date1 == null) {
+                JOptionPane.showMessageDialog( this, "Please enter Billing date","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+           
+           
+           if (cmbPaymentMode.getSelectedItem()==null) {
+                JOptionPane.showMessageDialog( this, "Please select a Payement Method","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+           
+           if (txtDueCharges.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter Due charges","Error", JOptionPane.ERROR_MESSAGE);
+              return;
+            }
+            
            if (txtServiceCharges.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please retrieve service charges","Error", JOptionPane.ERROR_MESSAGE);
                 return;
@@ -942,6 +980,8 @@ PreparedStatement pst=null;
                 JOptionPane.showMessageDialog( this, "Please enter total paid","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+           
+           
           
            
            
@@ -953,7 +993,7 @@ PreparedStatement pst=null;
         JOptionPane.showMessageDialog( this, "Record already exists","Error", JOptionPane.ERROR_MESSAGE);
         return;
       }
-            String date = ((JTextField)txtBillingDate.getDateEditor().getUiComponent()).getText();
+           
             String sql= "insert into Bill_Ward(PatientID,BillingDate,BedCharges,ServiceCharges,PaymentMode,PaymentModeDetails,ChargesPaid,DueCharges,TotalCharges,NoOfDays,TotalBedCharges)values('" + PatientID.getText() + "','" + date + "','" + txtBedCharges.getText() + "','" + txtServiceCharges.getText() + "','" + cmbPaymentMode.getSelectedItem()+ "','" + txtPaymentModeDetails.getText() + "','" + txtTotalPaid.getText() + "','" + txtDueCharges.getText() + "','" + txtTotalCharges.getText() + "','" + txtNoOfDays.getText() + "','" + txtTotalBedCharges.getText() +"')";
             pst=con.prepareStatement(sql);
             pst.execute();
@@ -1008,20 +1048,6 @@ PreparedStatement pst=null;
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void txtNoOfDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoOfDaysActionPerformed
-             
-                double add1 = Double.parseDouble(txtBedCharges.getText());
-                double add = Double.parseDouble(txtNoOfDays.getText());
-                double add2= add * add1;
-                String add3= Double.toString(add2);
-                txtTotalBedCharges.setText(add3);      
-                double add4=Double.parseDouble(txtTotalBedCharges.getText());
-                double add5 = Double.parseDouble(txtServiceCharges.getText());
-                double add6= add4 + add5;
-                 String add7= Double.toString(add6);
-                txtTotalCharges.setText(add7);
-    }//GEN-LAST:event_txtNoOfDaysActionPerformed
-
     private void txtTotalPaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalPaidActionPerformed
                 double add1 = Double.parseDouble(txtTotalCharges.getText());
                 double add = Double.parseDouble(txtTotalPaid.getText());
@@ -1035,14 +1061,6 @@ PreparedStatement pst=null;
   Bill_WardRecord frm= new Bill_WardRecord();
   frm.setVisible(true);
     }//GEN-LAST:event_btnGetDataActionPerformed
-
-    private void txtNoOfDaysKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoOfDaysKeyTyped
-     char c=evt.getKeyChar();
-      if (!(Character.isDigit(c)|| (c== KeyEvent.VK_BACK_SPACE)||(c==KeyEvent.VK_DELETE))){
-          getToolkit().beep();
-          evt.consume();
-    }                       
-    }//GEN-LAST:event_txtNoOfDaysKeyTyped
 
     private void txtTotalPaidKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalPaidKeyTyped
  char c=evt.getKeyChar();
@@ -1166,6 +1184,28 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPatientNameActionPerformed
 
+    private void txtNoOfDaysKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoOfDaysKeyTyped
+        char c=evt.getKeyChar();
+        if (!(Character.isDigit(c)|| (c== KeyEvent.VK_BACK_SPACE)||(c==KeyEvent.VK_DELETE))){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNoOfDaysKeyTyped
+
+    private void txtNoOfDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoOfDaysActionPerformed
+
+        double add1 = Double.parseDouble(txtBedCharges.getText());
+        double add = Double.parseDouble(txtNoOfDays.getText());
+        double add2= add * add1;
+        String add3= Double.toString(add2);
+        txtTotalBedCharges.setText(add3);
+        double add4=Double.parseDouble(txtTotalBedCharges.getText());
+        double add5 = Double.parseDouble(txtServiceCharges.getText());
+        double add6= add4 + add5;
+        String add7= Double.toString(add6);
+        txtTotalCharges.setText(add7);
+    }//GEN-LAST:event_txtNoOfDaysActionPerformed
+
     private void Get_Data1(){
       try{
         con=Connect.ConnectDB();
@@ -1273,7 +1313,7 @@ PreparedStatement pst=null;
     public javax.swing.JTextField txtDoctorName;
     public javax.swing.JTextField txtDueCharges;
     public javax.swing.JTextField txtGender;
-    public javax.swing.JTextField txtNoOfDays;
+    private javax.swing.JTextField txtNoOfDays;
     public javax.swing.JTextField txtPatientName;
     public javax.swing.JTextField txtPaymentModeDetails;
     public javax.swing.JTextField txtServiceCharges;
