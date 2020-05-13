@@ -121,7 +121,7 @@ PreparedStatement pst=null;
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(50, 214, 173));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Ward Details"));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -148,6 +148,9 @@ PreparedStatement pst=null;
 
         txtCharges.setEditable(false);
 
+        cmbWardType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "General", "Special" }));
+
+        cmbWardType.setSelectedIndex(-1);
         cmbWardType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbWardTypeActionPerformed(evt);
@@ -235,7 +238,7 @@ PreparedStatement pst=null;
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        header.setBackground(new java.awt.Color(0, 153, 102));
+        header.setBackground(new java.awt.Color(51, 255, 153));
         header.setName(""); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
@@ -286,7 +289,7 @@ PreparedStatement pst=null;
         });
         Ward_table.setViewportView(tblWard);
 
-        jPanel2.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
         btnNew.setText("New");
@@ -336,10 +339,10 @@ PreparedStatement pst=null;
             }
         });
 
-        txtPatientID.setBackground(new java.awt.Color(51, 255, 153));
+        txtPatientID.setBackground(new java.awt.Color(0, 153, 153));
         txtPatientID.setBorder(null);
 
-        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -352,7 +355,7 @@ PreparedStatement pst=null;
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
-        jPanel5.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
         jPanel5.setPreferredSize(new java.awt.Dimension(0, 10));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -616,11 +619,11 @@ PreparedStatement pst=null;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane Ward_table;
-    private javax.swing.JButton btnDelete;
+    public javax.swing.JButton btnDelete;
     private javax.swing.JButton btnGetData;
     private javax.swing.JButton btnNew;
-    private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnUpdate;
+    public javax.swing.JButton btnSave;
+    public javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cmbWardType;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
@@ -640,7 +643,7 @@ PreparedStatement pst=null;
     private javax.swing.JTable tblWard;
     public javax.swing.JTextField txtCharges;
     public javax.swing.JFormattedTextField txtNoOfbeds;
-    private javax.swing.JTextField txtPatientID;
+    public javax.swing.JTextField txtPatientID;
     public javax.swing.JTextField txtWardName;
     // End of variables declaration//GEN-END:variables
 }

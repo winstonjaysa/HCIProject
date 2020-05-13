@@ -132,7 +132,7 @@ private void fillcombo()
 
         txtAdmitID.setEditable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -341,7 +341,7 @@ private void fillcombo()
         });
         jScrollPane3.setViewportView(jTable2);
 
-        jPanel5.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel5.setBackground(new java.awt.Color(51, 255, 153));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -351,7 +351,7 @@ private void fillcombo()
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 540, 90));
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
@@ -429,7 +429,7 @@ private void fillcombo()
                 .addGap(27, 27, 27))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel3.setBackground(new java.awt.Color(50, 214, 173));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N

@@ -105,7 +105,7 @@ private void Reset()
         setTitle("Discharge Patient");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -161,7 +161,7 @@ private void Reset()
         });
         jPanel1.add(btnGetData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -171,15 +171,15 @@ private void Reset()
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 80, -1));
 
-        txtAdmitID1.setBackground(new java.awt.Color(0, 153, 102));
+        txtAdmitID1.setBackground(new java.awt.Color(51, 255, 153));
         txtAdmitID1.setBorder(null);
         jPanel4.add(txtAdmitID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
 
-        txtDischargeID1.setBackground(new java.awt.Color(0, 153, 102));
+        txtDischargeID1.setBackground(new java.awt.Color(51, 255, 153));
         txtDischargeID1.setBorder(null);
         jPanel4.add(txtDischargeID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(50, 214, 173));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -190,7 +190,7 @@ private void Reset()
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/nurse_wardboy.png"))); // NOI18N
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel3.setForeground(new java.awt.Color(51, 51, 51));
 
