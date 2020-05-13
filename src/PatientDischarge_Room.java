@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -99,13 +100,17 @@ private void Reset()
         txtAdmitID = new javax.swing.JTextField();
         txtDischargeID = new javax.swing.JTextField();
         txtAdmitDate = new javax.swing.JFormattedTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Discharge Patient");
         setBackground(new java.awt.Color(0, 153, 102));
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel3.setBackground(new java.awt.Color(50, 214, 173));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -259,7 +264,7 @@ private void Reset()
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -326,7 +331,7 @@ private void Reset()
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Discharge.png"))); // NOI18N
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -338,16 +343,38 @@ private void Reset()
         jLabel3.setText("jLabel3");
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 80, -1));
 
-        txtAdmitID.setBackground(new java.awt.Color(204, 204, 0));
+        txtAdmitID.setBackground(new java.awt.Color(51, 255, 153));
         txtAdmitID.setBorder(null);
         jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
 
-        txtDischargeID.setBackground(new java.awt.Color(204, 204, 0));
+        txtDischargeID.setBackground(new java.awt.Color(51, 255, 153));
         txtDischargeID.setBorder(null);
         jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
 
         txtAdmitDate.setEditable(false);
         txtAdmitDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+
+        jMenu1.setText("Themes");
+
+        jMenuItem1.setText("Dark Mode");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Default");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -503,6 +530,22 @@ private void Reset()
         frm.setVisible(true);
     }//GEN-LAST:event_btnGetDataActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        jPanel4.setBackground(new Color(15,15,10));
+        jPanel1.setBackground(new Color(77,77,51));
+        jPanel3.setBackground(new Color(173,173,133));
+        jPanel2.setBackground(new Color(204,204,179));
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        jPanel4.setBackground(new Color(51,255,153));
+        jPanel1.setBackground(new Color(0,153,153));
+        jPanel3.setBackground(new Color(50,214,173));
+        jPanel2.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -562,6 +605,10 @@ private void Reset()
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,6 +56,8 @@ private void fillcombo()
            JOptionPane.showMessageDialog(this,ex); 
         }
 }
+                                  
+
  private void GetRecord(){
         String sql="select DoctorID as 'Doctor ID', DoctorName as 'Doctor Name' from Doctor order by DoctorName";  try{
           con=Connect.ConnectDB();
@@ -133,6 +136,10 @@ private void fillcombo()
         jTextField3 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Admit Patient");
@@ -144,7 +151,7 @@ private void fillcombo()
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(50, 214, 173));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -314,7 +321,7 @@ private void fillcombo()
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 211, -1, 620));
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel5.setBackground(new java.awt.Color(51, 255, 153));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -328,7 +335,7 @@ private void fillcombo()
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, 0, 1120, 120));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
@@ -536,7 +543,7 @@ private void fillcombo()
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(jTextField3)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -544,6 +551,28 @@ private void fillcombo()
         );
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 500, 380));
+
+        jMenu1.setText("Themes");
+
+        jMenuItem1.setText("Dark Mode");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Default");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -790,6 +819,22 @@ private void fillcombo()
     private void cmbRoomNo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbRoomNo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbRoomNo1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+       jPanel5.setBackground(new Color(15,15,10));
+        jPanel2.setBackground(new Color(77,77,51));
+        jPanel1.setBackground(new Color(173,173,133));
+        jPanel3.setBackground(new Color(204,204,179));
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        jPanel5.setBackground(new Color(51,255,153));
+        jPanel2.setBackground(new Color(0,153,153));
+        jPanel1.setBackground(new Color(50,214,173));
+        jPanel3.setBackground(new Color(0,102,102));
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 private void Reset()
 {
     txtDoctorID.setText("");
@@ -867,6 +912,10 @@ private void Reset()
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

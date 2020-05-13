@@ -94,7 +94,7 @@ PreparedStatement pst=null;
             }
         });
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -106,11 +106,11 @@ PreparedStatement pst=null;
         jLabel3.setText("jLabel3");
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 80, -1));
 
-        txtAdmitID.setBackground(new java.awt.Color(204, 204, 0));
+        txtAdmitID.setBackground(new java.awt.Color(51, 255, 153));
         txtAdmitID.setBorder(null);
         jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
 
-        txtDischargeID.setBackground(new java.awt.Color(204, 204, 0));
+        txtDischargeID.setBackground(new java.awt.Color(51, 255, 153));
         txtDischargeID.setBorder(null);
         jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
 
