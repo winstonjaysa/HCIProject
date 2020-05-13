@@ -57,7 +57,7 @@ public class AddUser extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtContactNo = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 255, 153));
 
@@ -292,6 +292,10 @@ public class AddUser extends javax.swing.JFrame {
             String Password= String.valueOf(txtPassword.getPassword());
             if (Password.equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter password","Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (txtEmailID.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter Email ID","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             if (txtContactNo.getText().equals("")) {

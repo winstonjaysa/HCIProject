@@ -355,6 +355,17 @@ String username;
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
     try{
+        
+        if (txtEmailID.getText().equals("")) {
+            JOptionPane.showMessageDialog( this, "Please enter Email ID","Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (txtContactNo.getText().equals("")) {
+            JOptionPane.showMessageDialog( this, "Please enter contact no.","Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
       con=Connect.ConnectDB();
      String Password1= String.valueOf(txtPassword.getPassword());
        String sql= "update Registration set Email='" + txtEmailID.getText() + "',ContactNo='" + txtContactNo.getText() + "' where Username='" + txtUserName.getText() + "'";
