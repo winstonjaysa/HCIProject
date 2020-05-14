@@ -240,6 +240,7 @@
         <Component class="javax.swing.JTextField" name="PatientID">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Retrive from Get Data button or Patient table"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -248,6 +249,7 @@
         <Component class="javax.swing.JTextField" name="txtPatientName">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Retrive from Get Data button or Patient table"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -264,6 +266,7 @@
         <Component class="javax.swing.JTextField" name="txtGender">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Retrive from Get Data button or Patient table"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -272,6 +275,7 @@
         <Component class="javax.swing.JTextField" name="txtBloodGroup">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Retrive from Get Data button or Patient table"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -318,6 +322,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtDisease">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Enter patient&apos;s disease"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
@@ -325,6 +332,7 @@
         <Component class="javax.swing.JTextField" name="txtDoctorID">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Retrive from Get Data button or Doctor table"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -333,6 +341,7 @@
         <Component class="javax.swing.JTextField" name="txtDoctorName">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Retrive from Get Data button or Doctor table"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -349,6 +358,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
+                <Property name="toolTipText" type="java.lang.String" value="Enter Remarks for the parient"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -362,6 +372,7 @@
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Select a Room No"/>
           </Properties>
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cmbRoomNoItemStateChanged"/>
@@ -475,7 +486,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnUpdate" pref="148" max="32767" attributes="0"/>
+                  <Component id="btnUpdate" pref="130" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnGetData" min="-2" pref="119" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -507,7 +518,8 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Buttons/New.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="New"/>
+            <Property name="text" type="java.lang.String" value="Reset"/>
+            <Property name="toolTipText" type="java.lang.String" value="Reset Form"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewActionPerformed"/>
@@ -522,6 +534,7 @@
               <Image iconType="3" name="/Buttons/Save.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
+            <Property name="toolTipText" type="java.lang.String" value="Save Changes"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
@@ -539,6 +552,7 @@
               <Image iconType="3" name="/Buttons/Remove.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Get Data to Delete"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -557,6 +571,7 @@
               <Image iconType="3" name="/Buttons/Update.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Update"/>
+            <Property name="toolTipText" type="java.lang.String" value="Get Data to Update "/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -575,6 +590,7 @@
               <Image iconType="3" name="/Buttons/Get_Data.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Get Data"/>
+            <Property name="toolTipText" type="java.lang.String" value="Retrieve/View previous records"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetDataActionPerformed"/>
@@ -681,6 +697,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Buttons/search.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Search by Doctor Name , ID"/>
             <Property name="opaque" type="boolean" value="false"/>
           </Properties>
         </Component>
@@ -755,6 +772,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Buttons/search.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Search by Patient name . ID, Genger ,Blood Group"/>
             <Property name="opaque" type="boolean" value="false"/>
           </Properties>
         </Component>

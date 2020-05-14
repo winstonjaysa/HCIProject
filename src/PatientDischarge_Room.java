@@ -126,15 +126,19 @@ private void Reset()
         jLabel28.setText("Remarks");
 
         PatientID.setEditable(false);
+        PatientID.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         txtPatientName.setEditable(false);
+        txtPatientName.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Gender");
 
         txtGender.setEditable(false);
+        txtGender.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         txtBloodGroup.setEditable(false);
+        txtBloodGroup.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("Disease");
@@ -152,22 +156,27 @@ private void Reset()
         jLabel35.setText("Doctor Name");
 
         txtDisease.setEditable(false);
+        txtDisease.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         txtDoctorID.setEditable(false);
+        txtDoctorID.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         txtDoctorName.setEditable(false);
+        txtDoctorName.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         txtRemarks.setColumns(20);
         txtRemarks.setRows(5);
         jScrollPane3.setViewportView(txtRemarks);
 
         txtRoomNo.setEditable(false);
+        txtRoomNo.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Discharge Date");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/arrow.png"))); // NOI18N
+        jButton1.setToolTipText("Retrieve Pattient Admit Room Records");
         jButton1.setPreferredSize(new java.awt.Dimension(41, 21));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,7 +279,8 @@ private void Reset()
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
-        btnNew.setText("New");
+        btnNew.setText("Reset");
+        btnNew.setToolTipText("Reset Form");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
@@ -281,6 +291,7 @@ private void Reset()
         btnSave.setBackground(new java.awt.Color(255, 255, 255));
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
         btnSave.setText("Save");
+        btnSave.setToolTipText("Save changes");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -291,6 +302,7 @@ private void Reset()
         btnDelete.setBackground(new java.awt.Color(255, 255, 255));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setToolTipText("Get Data to Delete");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,6 +314,7 @@ private void Reset()
         btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.setToolTipText("Get Data to Updat");
         btnUpdate.setEnabled(false);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,6 +326,7 @@ private void Reset()
         btnGetData.setBackground(new java.awt.Color(255, 255, 255));
         btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
         btnGetData.setText("Get Data");
+        btnGetData.setToolTipText("Retrieve/View previous records");
         btnGetData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetDataActionPerformed(evt);

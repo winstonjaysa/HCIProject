@@ -169,15 +169,19 @@ private void fillcombo()
         jLabel10.setText("Remarks");
 
         PatientID.setEditable(false);
+        PatientID.setToolTipText("Retrive from Get Data button or Patient table");
 
         txtPatientName.setEditable(false);
+        txtPatientName.setToolTipText("Retrive from Get Data button or Patient table");
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Gender");
 
         txtGender.setEditable(false);
+        txtGender.setToolTipText("Retrive from Get Data button or Patient table");
 
         txtBloodGroup.setEditable(false);
+        txtBloodGroup.setToolTipText("Retrive from Get Data button or Patient table");
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Disease");
@@ -194,15 +198,21 @@ private void fillcombo()
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Doctor Name");
 
+        txtDisease.setToolTipText("Enter patient's disease");
+
         txtDoctorID.setEditable(false);
+        txtDoctorID.setToolTipText("Retrive from Get Data button or Doctor table");
 
         txtDoctorName.setEditable(false);
+        txtDoctorName.setToolTipText("Retrive from Get Data button or Doctor table");
 
         txtRemarks.setColumns(20);
         txtRemarks.setRows(5);
+        txtRemarks.setToolTipText("Enter Remarks for the parient");
         jScrollPane1.setViewportView(txtRemarks);
 
         cmbRoomNo.setEditable(true);
+        cmbRoomNo.setToolTipText("Select a Room No");
         cmbRoomNo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbRoomNoItemStateChanged(evt);
@@ -340,7 +350,8 @@ private void fillcombo()
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
-        btnNew.setText("New");
+        btnNew.setText("Reset");
+        btnNew.setToolTipText("Reset Form");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
@@ -350,6 +361,7 @@ private void fillcombo()
         btnSave.setBackground(new java.awt.Color(255, 255, 255));
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
         btnSave.setText("Save");
+        btnSave.setToolTipText("Save Changes");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -359,6 +371,7 @@ private void fillcombo()
         btnDelete.setBackground(new java.awt.Color(255, 255, 255));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setToolTipText("Get Data to Delete");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -369,6 +382,7 @@ private void fillcombo()
         btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.setToolTipText("Get Data to Update ");
         btnUpdate.setEnabled(false);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -379,6 +393,7 @@ private void fillcombo()
         btnGetData.setBackground(new java.awt.Color(255, 255, 255));
         btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
         btnGetData.setText("Get Data");
+        btnGetData.setToolTipText("Retrieve/View previous records");
         btnGetData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetDataActionPerformed(evt);
@@ -397,7 +412,7 @@ private void fillcombo()
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDelete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGetData, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -439,6 +454,7 @@ private void fillcombo()
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/search.png"))); // NOI18N
+        jButton2.setToolTipText("Search by Doctor Name , ID");
         jButton2.setOpaque(false);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -488,6 +504,7 @@ private void fillcombo()
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/search.png"))); // NOI18N
+        jButton3.setToolTipText("Search by Patient name . ID, Genger ,Blood Group");
         jButton3.setOpaque(false);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
