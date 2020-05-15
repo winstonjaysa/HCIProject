@@ -124,10 +124,9 @@ PreparedStatement pst=null;
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
-        btnNew.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnNew.setForeground(new java.awt.Color(0, 153, 102));
+        btnNew.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
-        btnNew.setText("New");
+        btnNew.setText("Reset");
         btnNew.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnNew.setMaximumSize(new java.awt.Dimension(113, 23));
         btnNew.setMinimumSize(new java.awt.Dimension(113, 23));
@@ -138,8 +137,7 @@ PreparedStatement pst=null;
             }
         });
 
-        btnSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSave.setForeground(new java.awt.Color(0, 153, 102));
+        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
         btnSave.setText("Save");
         btnSave.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -152,8 +150,7 @@ PreparedStatement pst=null;
             }
         });
 
-        btnDelete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(0, 153, 102));
+        btnDelete.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/remove.png"))); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -167,8 +164,7 @@ PreparedStatement pst=null;
             }
         });
 
-        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(0, 153, 102));
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -182,8 +178,7 @@ PreparedStatement pst=null;
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 153, 102));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
         jButton1.setText("Get Data");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -202,8 +197,8 @@ PreparedStatement pst=null;
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(84, 84, 84)
-                .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
