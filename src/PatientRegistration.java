@@ -101,10 +101,9 @@ private void Reset()
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Patient Registration");
-        setPreferredSize(new java.awt.Dimension(788, 750));
         setResizable(false);
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnNew.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -194,7 +193,7 @@ private void Reset()
                 .addGap(21, 21, 21))
         );
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel3.setBackground(new java.awt.Color(51, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -234,7 +233,7 @@ private void Reset()
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Patients-icon.png"))); // NOI18N
         jLabel10.setText("Patient Details ");
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(50, 214, 173));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

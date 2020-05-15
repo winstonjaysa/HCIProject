@@ -86,10 +86,9 @@ PreparedStatement pst=null;
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Doctor");
         setBackground(new java.awt.Color(204, 204, 204));
-        setPreferredSize(new java.awt.Dimension(788, 800));
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel3.setBackground(new java.awt.Color(51, 255, 153));
         jPanel3.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel3.setPreferredSize(new java.awt.Dimension(1000, 100));
 
@@ -123,7 +122,7 @@ PreparedStatement pst=null;
                         .addGap(30, 30, 30))))
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
         btnNew.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnNew.setForeground(new java.awt.Color(0, 153, 102));
@@ -235,7 +234,7 @@ PreparedStatement pst=null;
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/People-Doctor-Male-icon.png"))); // NOI18N
         jLabel14.setText("Doctor Details");
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(50, 214, 173));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 

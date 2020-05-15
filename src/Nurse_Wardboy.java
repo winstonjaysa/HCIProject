@@ -94,7 +94,7 @@ private void Reset()
         setTitle("Nurse/Wardboy");
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel3.setBackground(new java.awt.Color(51, 255, 153));
         jPanel3.setPreferredSize(new java.awt.Dimension(1000, 100));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -126,7 +126,7 @@ private void Reset()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
 
         btnNew.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnNew.setForeground(new java.awt.Color(0, 153, 102));
@@ -238,7 +238,7 @@ private void Reset()
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Medical-Nurse-Female-Dark-icon.png"))); // NOI18N
         jLabel12.setText("Nurse/Wardboy Details");
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(50, 214, 173));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
