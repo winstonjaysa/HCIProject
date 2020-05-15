@@ -49,7 +49,7 @@ public class About extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 370, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel1.setBackground(new java.awt.Color(51, 255, 153));
         jPanel1.setForeground(new java.awt.Color(0, 153, 102));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));

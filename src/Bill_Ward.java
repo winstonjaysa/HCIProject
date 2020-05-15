@@ -63,7 +63,6 @@ PreparedStatement pst=null;
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         PatientID = new javax.swing.JTextField();
@@ -123,7 +122,6 @@ PreparedStatement pst=null;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Billing");
-        setUndecorated(true);
         setResizable(false);
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -154,7 +152,7 @@ PreparedStatement pst=null;
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
@@ -234,20 +232,13 @@ PreparedStatement pst=null;
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Ward Bill Form");
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/ward_1.png"))); // NOI18N
-
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
-        jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel19MouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -258,9 +249,7 @@ PreparedStatement pst=null;
                 .addComponent(jLabel14)
                 .addGap(39, 39, 39)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addContainerGap())
+                .addContainerGap(583, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,13 +258,9 @@ PreparedStatement pst=null;
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel5.setBackground(new java.awt.Color(50, 214, 173));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -443,7 +428,7 @@ PreparedStatement pst=null;
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel6.setBackground(new java.awt.Color(50, 214, 173));
         jPanel6.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -605,7 +590,7 @@ PreparedStatement pst=null;
                 .addGap(40, 40, 40))
         );
 
-        jPanel7.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel7.setBackground(new java.awt.Color(50, 214, 173));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -764,7 +749,7 @@ PreparedStatement pst=null;
                 .addContainerGap())
         );
 
-        jMenu2.setText("Theme");
+        jMenu2.setText("Select Theme");
 
         jMenuItem1.setText("Dark Mode");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -1092,10 +1077,6 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDueChargesActionPerformed
 
-    private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
-        this.dispose();
-    }//GEN-LAST:event_jLabel19MouseClicked
-
     static int axisx,axisy;
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         axisx=evt.getX();
@@ -1128,7 +1109,7 @@ PreparedStatement pst=null;
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         
-        jPanel4.setBackground(new Color(204,204,0));
+        jPanel4.setBackground(new Color(51,255,153));
         jPanel2.setBackground(new Color(0,153,102));
         jPanel8.setBackground(new Color(0,102,102));
         jPanel1.setBackground(new Color(0,102,102));
@@ -1271,7 +1252,6 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
@@ -1313,7 +1293,7 @@ PreparedStatement pst=null;
     public javax.swing.JTextField txtDoctorName;
     public javax.swing.JTextField txtDueCharges;
     public javax.swing.JTextField txtGender;
-    private javax.swing.JTextField txtNoOfDays;
+    public javax.swing.JTextField txtNoOfDays;
     public javax.swing.JTextField txtPatientName;
     public javax.swing.JTextField txtPaymentModeDetails;
     public javax.swing.JTextField txtServiceCharges;

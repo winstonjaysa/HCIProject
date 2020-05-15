@@ -53,8 +53,6 @@ PreparedStatement pst=null;
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtAdmitID = new javax.swing.JTextField();
-        txtDischargeID = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
@@ -85,7 +83,7 @@ PreparedStatement pst=null;
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -96,14 +94,6 @@ PreparedStatement pst=null;
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/ward_1.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, 80, -1));
-
-        txtAdmitID.setBackground(new java.awt.Color(204, 204, 0));
-        txtAdmitID.setBorder(null);
-        jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
-
-        txtDischargeID.setBackground(new java.awt.Color(204, 204, 0));
-        txtDischargeID.setBorder(null);
-        jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/search.png"))); // NOI18N
@@ -259,8 +249,6 @@ PreparedStatement pst=null;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField txtAdmitID;
-    public javax.swing.JTextField txtDischargeID;
     // End of variables declaration//GEN-END:variables
 }
 //done11
