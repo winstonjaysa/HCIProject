@@ -51,7 +51,6 @@ PreparedStatement pst=null;
         jTable1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtAdmitID = new javax.swing.JTextField();
         txtDischargeID = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -84,23 +83,20 @@ PreparedStatement pst=null;
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Patient Discharge Details");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 310, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Discharge.png"))); // NOI18N
+        jLabel2.setText("Patient Discharge Ward Details");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 440, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/ward_1.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 80, -1));
-
-        txtAdmitID.setBackground(new java.awt.Color(204, 204, 0));
+        txtAdmitID.setBackground(new java.awt.Color(51, 255, 153));
         txtAdmitID.setBorder(null);
         jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
 
-        txtDischargeID.setBackground(new java.awt.Color(204, 204, 0));
+        txtDischargeID.setBackground(new java.awt.Color(51, 255, 153));
         txtDischargeID.setBorder(null);
         jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
 
@@ -235,7 +231,6 @@ PreparedStatement pst=null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
