@@ -60,6 +60,21 @@ private void Reset()
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btnNew = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnGetData = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtAdmitID = new javax.swing.JTextField();
+        txtDischargeID = new javax.swing.JTextField();
+        jPanel8 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -85,20 +100,6 @@ private void Reset()
         jButton1 = new javax.swing.JButton();
         jDateChooser2 = new datechooser.beans.DateChooserCombo();
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
-        jPanel1 = new javax.swing.JPanel();
-        btnNew = new javax.swing.JButton();
-        btnSave = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
-        btnGetData = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtAdmitID = new javax.swing.JTextField();
-        txtDischargeID = new javax.swing.JTextField();
         txtAdmitDate = new javax.swing.JFormattedTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -110,19 +111,109 @@ private void Reset()
         setBackground(new java.awt.Color(0, 153, 102));
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(50, 214, 173));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnNew.setBackground(new java.awt.Color(255, 255, 255));
+        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
+        btnNew.setText("Reset");
+        btnNew.setToolTipText("Reset Form");
+        btnNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
+
+        btnSave.setBackground(new java.awt.Color(255, 255, 255));
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
+        btnSave.setText("Save");
+        btnSave.setToolTipText("Save changes");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 100, -1));
+
+        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
+        btnDelete.setText("Delete");
+        btnDelete.setToolTipText("Get Data to Delete");
+        btnDelete.setEnabled(false);
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 100, -1));
+
+        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
+        btnUpdate.setText("Update");
+        btnUpdate.setToolTipText("Get Data to Updat");
+        btnUpdate.setEnabled(false);
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 110, -1));
+
+        btnGetData.setBackground(new java.awt.Color(255, 255, 255));
+        btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
+        btnGetData.setText("Get Data");
+        btnGetData.setToolTipText("Retrieve/View previous records");
+        btnGetData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetDataActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGetData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Patient Discharge Room Details");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Discharge.png"))); // NOI18N
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+
+        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Patient Discharge Room Form");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/patroom.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 80, -1));
+
+        txtAdmitID.setBackground(new java.awt.Color(51, 255, 153));
+        txtAdmitID.setBorder(null);
+        jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
+
+        txtDischargeID.setBackground(new java.awt.Color(51, 255, 153));
+        txtDischargeID.setBorder(null);
+        jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
+
+        jPanel8.setBackground(new java.awt.Color(50, 214, 173));
+
+        jPanel3.setBackground(new java.awt.Color(206, 234, 148));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Patient ID");
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Patient Name");
 
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Blood Group");
 
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Remarks");
 
         PatientID.setEditable(false);
@@ -131,7 +222,6 @@ private void Reset()
         txtPatientName.setEditable(false);
         txtPatientName.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Gender");
 
         txtGender.setEditable(false);
@@ -140,19 +230,14 @@ private void Reset()
         txtBloodGroup.setEditable(false);
         txtBloodGroup.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("Disease");
 
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Admit Date");
 
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("Room No.");
 
-        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Doctor ID");
 
-        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Doctor Name");
 
         txtDisease.setEditable(false);
@@ -171,7 +256,6 @@ private void Reset()
         txtRoomNo.setEditable(false);
         txtRoomNo.setToolTipText("Retrieve previous Discharge Data or Pattient Admit room details");
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Discharge Date");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -273,100 +357,40 @@ private void Reset()
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnNew.setBackground(new java.awt.Color(255, 255, 255));
-        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
-        btnNew.setText("Reset");
-        btnNew.setToolTipText("Reset Form");
-        btnNew.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
-
-        btnSave.setBackground(new java.awt.Color(255, 255, 255));
-        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
-        btnSave.setText("Save");
-        btnSave.setToolTipText("Save changes");
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 100, -1));
-
-        btnDelete.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
-        btnDelete.setText("Delete");
-        btnDelete.setToolTipText("Get Data to Delete");
-        btnDelete.setEnabled(false);
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 100, -1));
-
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
-        btnUpdate.setText("Update");
-        btnUpdate.setToolTipText("Get Data to Updat");
-        btnUpdate.setEnabled(false);
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 110, -1));
-
-        btnGetData.setBackground(new java.awt.Color(255, 255, 255));
-        btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
-        btnGetData.setText("Get Data");
-        btnGetData.setToolTipText("Retrieve/View previous records");
-        btnGetData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetDataActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnGetData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
-
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Patient Discharge Room Details");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Discharge.png"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
-
-        jPanel4.setBackground(new java.awt.Color(51, 255, 153));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Patient Discharge Room Form");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/patroom.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 80, -1));
-
-        txtAdmitID.setBackground(new java.awt.Color(51, 255, 153));
-        txtAdmitID.setBorder(null);
-        jPanel4.add(txtAdmitID, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 90, -1));
-
-        txtDischargeID.setBackground(new java.awt.Color(51, 255, 153));
-        txtDischargeID.setBorder(null);
-        jPanel4.add(txtDischargeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 126, -1));
-
         txtAdmitDate.setEditable(false);
         txtAdmitDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        txtAdmitDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAdmitDateActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtAdmitDate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116))
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addGap(82, 82, 82)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(119, Short.MAX_VALUE)))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(275, Short.MAX_VALUE)
+                .addComponent(txtAdmitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(273, 273, 273))
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
         jMenu1.setText("Themes");
 
@@ -394,15 +418,10 @@ private void Reset()
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAdmitDate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,13 +431,8 @@ private void Reset()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addComponent(txtAdmitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -550,15 +564,23 @@ private void Reset()
         jPanel1.setBackground(new Color(77,77,51));
         jPanel3.setBackground(new Color(173,173,133));
         jPanel2.setBackground(new Color(204,204,179));
+        jPanel8.setBackground(new Color(77,77,51));
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         jPanel4.setBackground(new Color(51,255,153));
         jPanel1.setBackground(new Color(0,153,153));
-        jPanel3.setBackground(new Color(50,214,173));
+        jPanel3.setBackground(new Color(206,234,148));
         jPanel2.setBackground(new Color(0,102,102));
+        jPanel8.setBackground(new Color(50,214,173));
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void txtAdmitDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdmitDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAdmitDateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -627,6 +649,7 @@ private void Reset()
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane3;
     public javax.swing.JFormattedTextField txtAdmitDate;
     public javax.swing.JTextField txtAdmitID;
