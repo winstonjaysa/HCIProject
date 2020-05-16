@@ -127,6 +127,7 @@ PreparedStatement pst=null;
         btnNew.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
         btnNew.setText("Reset");
+        btnNew.setToolTipText("Reset Form");
         btnNew.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnNew.setMaximumSize(new java.awt.Dimension(113, 23));
         btnNew.setMinimumSize(new java.awt.Dimension(113, 23));
@@ -153,6 +154,7 @@ PreparedStatement pst=null;
         btnDelete.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/remove.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setToolTipText("Get Data to Delete");
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDelete.setEnabled(false);
         btnDelete.setMaximumSize(new java.awt.Dimension(113, 23));

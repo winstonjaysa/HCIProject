@@ -131,6 +131,7 @@ private void Reset()
         btnNew.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/New.png"))); // NOI18N
         btnNew.setText("Reset");
+        btnNew.setToolTipText("Reset Form");
         btnNew.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnNew.setMaximumSize(new java.awt.Dimension(113, 23));
         btnNew.setMinimumSize(new java.awt.Dimension(113, 23));
@@ -144,6 +145,7 @@ private void Reset()
         btnSave.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Save.png"))); // NOI18N
         btnSave.setText("Save");
+        btnSave.setToolTipText("Save Changes");
         btnSave.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSave.setMaximumSize(new java.awt.Dimension(113, 23));
         btnSave.setMinimumSize(new java.awt.Dimension(113, 23));
@@ -157,6 +159,7 @@ private void Reset()
         btnDelete.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Remove.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setToolTipText("Get Data to Delete");
         btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDelete.setEnabled(false);
         btnDelete.setMaximumSize(new java.awt.Dimension(113, 23));
@@ -171,6 +174,7 @@ private void Reset()
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Update.png"))); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.setToolTipText("Get Data to Update");
         btnUpdate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnUpdate.setEnabled(false);
         btnUpdate.setMaximumSize(new java.awt.Dimension(113, 23));
@@ -185,6 +189,7 @@ private void Reset()
         btnGetData.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnGetData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Get_Data.png"))); // NOI18N
         btnGetData.setText("Get Data");
+        btnGetData.setToolTipText("Retrieve/View previous records");
         btnGetData.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnGetData.setMaximumSize(new java.awt.Dimension(113, 23));
         btnGetData.setMinimumSize(new java.awt.Dimension(113, 23));
