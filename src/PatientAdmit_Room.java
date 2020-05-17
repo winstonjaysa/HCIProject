@@ -44,7 +44,7 @@ private void fillcombo()
      try{
       
    con=Connect.ConnectDB();
-      String sql= "select distinct RoomNo from Room order by RoomNo";
+      String sql= "Select * from Room where RoomStatus= 'Vacant'";
       pst=con.prepareStatement(sql);
       rs=pst.executeQuery();
       while(rs.next()){

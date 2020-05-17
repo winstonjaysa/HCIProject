@@ -31,6 +31,7 @@ PreparedStatement pst=null;
         con= Connect.ConnectDB();
         Get_Data();
         setLocationRelativeTo(null);
+        cmbRoomType.setSelectedIndex(0);
     }
 private void Reset()
 {
@@ -40,6 +41,7 @@ private void Reset()
     btnSave.setEnabled(true);
     btnDelete.setEnabled(false);
     btnUpdate.setEnabled(false);
+    jTextField2.setText("");
     txtRoomNo.requestDefaultFocus();
     Get_Data();
 }
