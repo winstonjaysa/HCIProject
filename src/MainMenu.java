@@ -549,6 +549,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Contact.png"))); // NOI18N
+        jButton13.setToolTipText("Contact");
         jButton13.setBorder(null);
         jButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -558,6 +559,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/About.png"))); // NOI18N
+        jButton14.setToolTipText("About");
         jButton14.setBorder(null);
         jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -568,6 +570,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         jButton15.setForeground(new java.awt.Color(240, 240, 240));
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Logout.png"))); // NOI18N
+        jButton15.setToolTipText("Logout");
         jButton15.setBorder(null);
         jButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -856,6 +859,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 153, 0));
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Buttons/Refresh.png"))); // NOI18N
+        jButton16.setToolTipText("Refresh Dashboard");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);

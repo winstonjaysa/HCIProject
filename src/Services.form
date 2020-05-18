@@ -68,9 +68,9 @@
           <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
           <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
           <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
-          <Component id="jPanel5" alignment="0" pref="844" max="32767" attributes="0"/>
+          <Component id="jPanel5" alignment="0" pref="845" max="32767" attributes="0"/>
           <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-          <Component id="jPanel6" alignment="1" pref="844" max="32767" attributes="0"/>
+          <Component id="jPanel6" alignment="1" pref="845" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -130,7 +130,7 @@
                           <Component id="txtServiceCharges" min="-2" pref="119" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="93" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -140,7 +140,7 @@
                       <Component id="txtPatientID" min="-2" pref="120" max="-2" attributes="0"/>
                       <Component id="txtPatientName" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="99" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -238,6 +238,7 @@
         <Component class="javax.swing.JTextField" name="txtPatientID">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Select a record from the table below"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -246,6 +247,7 @@
         <Component class="javax.swing.JTextField" name="txtPatientName">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="toolTipText" type="java.lang.String" value="Select a record from the table below"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -367,7 +369,8 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Buttons/New.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="New"/>
+            <Property name="text" type="java.lang.String" value="Reset"/>
+            <Property name="toolTipText" type="java.lang.String" value="Reset the form"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
@@ -389,6 +392,7 @@
               <Image iconType="3" name="/Buttons/Save.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
+            <Property name="toolTipText" type="java.lang.String" value="Save changes"/>
             <Property name="iconTextGap" type="int" value="10"/>
           </Properties>
           <Events>
@@ -404,6 +408,7 @@
               <Image iconType="3" name="/Buttons/Remove.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Select a record from Get Data to delete"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="iconTextGap" type="int" value="10"/>
           </Properties>
@@ -420,6 +425,7 @@
               <Image iconType="3" name="/Buttons/Update.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Update"/>
+            <Property name="toolTipText" type="java.lang.String" value="Select a record from Get Data to update"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -435,6 +441,7 @@
               <Image iconType="3" name="/Buttons/Get_Data.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Get Data"/>
+            <Property name="toolTipText" type="java.lang.String" value="View Service Details"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetDataActionPerformed"/>
