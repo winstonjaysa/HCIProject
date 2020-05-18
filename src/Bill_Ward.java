@@ -1110,13 +1110,13 @@ PreparedStatement pst=null;
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         
         jPanel4.setBackground(new Color(51,255,153));
-        jPanel2.setBackground(new Color(0,153,102));
+        jPanel2.setBackground(new Color(0,153,153));
         jPanel8.setBackground(new Color(0,102,102));
         jPanel1.setBackground(new Color(0,102,102));
-        jPanel5.setBackground(new Color(0,153,102));
-        jPanel6.setBackground(new Color(0,153,102));
-        jPanel7.setBackground(new Color(0,153,102));
-        jTable1.setBackground(new Color(0,204,102));
+        jPanel5.setBackground(new Color(50,214,173));
+        jPanel6.setBackground(new Color(50,214,173));
+        jPanel7.setBackground(new Color(50,214,173));
+      //  jTable1.setBackground(new Color(0,204,102));
        
         
         
@@ -1329,4 +1329,4 @@ PreparedStatement pst=null;
         }
     }
 }
-//done11
+//End

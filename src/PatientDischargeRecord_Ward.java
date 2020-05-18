@@ -29,7 +29,7 @@ PreparedStatement pst=null;
     }
  private void Get_Data(){
          try{
-               String sql="Select ID as 'Discharge ID', AdmitPatient_Ward.AdmitID as 'Admit ID',PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Ward.Wardname as 'Ward Name',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DischargeDate as 'Discharge Date',DP_Remarks as 'Remarks' from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward where Ward.Wardname=AdmitPatient_Ward.Wardname and Doctor.DoctorID=AdmitPatient_Ward.DoctorID and PatientRegistration.PatientID=AdmitPatient_Ward.PatientID  and AdmitPatient_Ward.admitID= DischargePatient_Ward.admitID order by Dischargedate";
+               String sql="Select ID as 'Discharge ID', AdmitPatient_Ward.AdmitID as 'Admit ID',PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Ward.Wardname as 'Ward Name',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DischargeDate as 'Discharge Date',DP_Remarks as 'Remarks' from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward where Ward.Wardname=AdmitPatient_Ward.Wardname order by Dischargedate";
                pst=con.prepareStatement(sql);
          rs= pst.executeQuery();
          jTable1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -148,7 +148,7 @@ PreparedStatement pst=null;
             con=Connect.ConnectDB();
             int row= jTable1.getSelectedRow();
             String table_click= jTable1.getModel().getValueAt(row, 0).toString();
-             String sql="Select * from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward where Ward.Wardname=AdmitPatient_Ward.Wardname and Doctor.DoctorID=AdmitPatient_Ward.DoctorID and PatientRegistration.PatientID=AdmitPatient_Ward.PatientID and AdmitPatient_Ward.AdmitID=DischargePatient_Ward.admitID and ID=" + table_click + "";   
+             String sql="Select * from Ward,Doctor,PatientRegistration,AdmitPatient_Ward,DischargePatient_Ward where Ward.Wardname=AdmitPatient_Ward.Wardname";   
              pst=con.prepareStatement(sql);
             rs=  pst.executeQuery();
             if(rs.next()){

@@ -1109,12 +1109,12 @@ private void Reset()
         
         
         jPanel4.setBackground(new Color(51,255,153));
-        jPanel8.setBackground(new Color(0,153,102));
+        jPanel8.setBackground(new Color(0,153,153));
         jPanel5.setBackground(new Color(0,102,102));
         jPanel7.setBackground(new Color(0,102,102));
-        jPanel3.setBackground(new Color(0,153,102));
-        jPanel1.setBackground(new Color(0,153,102));
-        jTable1.setBackground(new Color(0,204,102));
+        jPanel3.setBackground(new Color(50,214,173));
+        jPanel1.setBackground(new Color(50,214,173));
+        //jTable1.setBackground(new Color(0,204,102));
         
         
         
@@ -1312,4 +1312,4 @@ private void Reset()
     public javax.swing.JTextField txtTotalRoomCharges;
     // End of variables declaration//GEN-END:variables
 }
-//done11
+//End
