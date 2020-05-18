@@ -94,7 +94,7 @@ PreparedStatement pst=null;
         setTitle("Ward");
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel3.setBackground(new java.awt.Color(51, 255, 153));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
